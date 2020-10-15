@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>css-menu</title>
+</head>
+<style>
+  ul {
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+  }
+
+  ul ul {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    display: none;
+  }
+
+  ul ul ul {
+    left: 100%;
+    top: 0px;
+  }
+
+  li {
+    display: inline-block;
+    position: relative;
+    white-space: nowrap;
+    padding: 3px 2px;
+  }
+
+  li li {
+    display: block;
+  }
+
+  li:hover>ul {
+    display: block;
+  }
+
+  li:hover {
+    background-color: blue;
+  }
+</style>
+
+<body>
+
+  <ul class="header">
+    <li>优惠券
+      <ul class="menu">
+        <li>蔬菜水果
+          <ul>
+            <li>香蕉
+              <ul>
+                <li>香蕉</li>
+                <li>苹果</li>
+                <li>芹菜</li>
+                <li>桃子</li>
+              </ul>
+            </li>
+            <li>苹果
+              <ul>
+                <li>香蕉</li>
+                <li>苹果</li>
+                <li>芹菜</li>
+                <li>桃子</li>
+              </ul>
+            </li>
+            <li>芹菜
+              <ul>
+                <li>香蕉</li>
+                <li>苹果</li>
+                <li>芹菜</li>
+                <li>桃子</li>
+              </ul>
+            </li>
+            <li>桃子
+              <ul>
+                <li>香蕉</li>
+                <li>苹果</li>
+                <li>芹菜</li>
+                <li>桃子</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>营养副食
+          <ul>
+            <li>薯片<ul>
+                <li>薯片</li>
+                <li>方便面</li>
+                <li>麦片</li>
+                <li>锅巴</li>
+              </ul>
+            </li>
+            <li>方便面<ul>
+                <li>薯片</li>
+                <li>方便面</li>
+                <li>麦片</li>
+                <li>锅巴</li>
+              </ul>
+            </li>
+            <li>麦片<ul>
+                <li>薯片</li>
+                <li>方便面</li>
+                <li>麦片</li>
+                <li>锅巴</li>
+              </ul>
+            </li>
+            <li>锅巴<ul>
+                <li>薯片</li>
+                <li>方便面</li>
+                <li>麦片</li>
+                <li>锅巴</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>鞋帽服饰
+          <ul>
+            <li>上衣 <ul>
+                <li>上衣</li>
+                <li>裙子</li>
+                <li>帽子</li>
+                <li>鞋子</li>
+              </ul>
+            </li>
+            <li>裙子 <ul>
+                <li>上衣</li>
+                <li>裙子</li>
+                <li>帽子</li>
+                <li>鞋子</li>
+              </ul>
+            </li>
+            <li>帽子 <ul>
+                <li>上衣</li>
+                <li>裙子</li>
+                <li>帽子</li>
+                <li>鞋子</li>
+              </ul>
+            </li>
+            <li>鞋子 <ul>
+                <li>上衣</li>
+                <li>裙子</li>
+                <li>帽子</li>
+                <li>鞋子</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>日用百货
+          <ul>
+            <li>卫生纸 <ul>
+                <li>上衣</li>
+                <li>裙子</li>
+                <li>帽子</li>
+                <li>鞋子</li>
+              </ul>
+            </li>
+            <li>牙膏 <ul>
+                <li>上衣</li>
+                <li>裙子</li>
+                <li>帽子</li>
+                <li>鞋子</li>
+              </ul>
+            </li>
+            <li>洗衣液 <ul>
+                <li>上衣</li>
+                <li>裙子</li>
+                <li>帽子</li>
+                <li>鞋子</li>
+              </ul>
+            </li>
+            <li>毛巾 <ul>
+                <li>上衣</li>
+                <li>裙子</li>
+                <li>帽子</li>
+                <li>鞋子</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>plus会员<ul class="menu">
+        <li>蔬菜水果
+          <ul>
+            <li>香蕉
+              <ul>
+                <li>香蕉</li>
+                <li>苹果</li>
+                <li>芹菜</li>
+                <li>桃子</li>
+              </ul>
+            </li>
+            <li>苹果
+              <ul>
+                <li>香蕉</li>
+                <li>苹果</li>
+                <li>芹菜</li>
+                <li>桃子</li>
+              </ul>
+            </li>
+            <li>芹菜
+              <ul>
+                <li>香蕉</li>
+                <li>苹果</li>
+                <li>芹菜</li>
+                <li>桃子</li>
+              </ul>
+            </li>
+            <li>桃子
+              <ul>
+                <li>香蕉</li>
+                <li>苹果</li>
+                <li>芹菜</li>
+                <li>桃子</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>营养副食
+          <ul>
+            <li>薯片<ul>
+                <li>薯片</li>
+                <li>方便面</li>
+                <li>麦片</li>
+                <li>锅巴</li>
+              </ul>
+            </li>
+            <li>方便面<ul>
+                <li>薯片</li>
+                <li>方便面</li>
+                <li>麦片</li>
+                <li>锅巴</li>
+              </ul>
+            </li>
+            <li>麦片<ul>
+                <li>薯片</li>
+                <li>方便面</li>
+                <li>麦片</li>
+                <li>锅巴</li>
+              </ul>
+            </li>
+            <li>锅巴<ul>
+                <li>薯片</li>
+                <li>方便面</li>
+                <li>麦片</li>
+                <li>锅巴</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>鞋帽服饰
+          <ul>
+            <li>上衣 <ul>
+                <li>上衣</li>
+                <li>裙子</li>
+                <li>帽子</li>
+                <li>鞋子</li>
+              </ul>
+            </li>
+            <li>裙子 <ul>
+                <li>上衣</li>
+                <li>裙子</li>
+                <li>帽子</li>
+                <li>鞋子</li>
+              </ul>
+            </li>
+            <li>帽子 <ul>
+                <li>上衣</li>
+                <li>裙子</li>
+                <li>帽子</li>
+                <li>鞋子</li>
+              </ul>
+            </li>
+            <li>鞋子 <ul>
+                <li>上衣</li>
+                <li>裙子</li>
+                <li>帽子</li>
+                <li>鞋子</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>日用百货
+          <ul>
+            <li>卫生纸 <ul>
+                <li>上衣</li>
+                <li>裙子</li>
+                <li>帽子</li>
+                <li>鞋子</li>
+              </ul>
+            </li>
+            <li>牙膏 <ul>
+                <li>上衣</li>
+                <li>裙子</li>
+                <li>帽子</li>
+                <li>鞋子</li>
+              </ul>
+            </li>
+            <li>洗衣液 <ul>
+                <li>上衣</li>
+                <li>裙子</li>
+                <li>帽子</li>
+                <li>鞋子</li>
+              </ul>
+            </li>
+            <li>毛巾 <ul>
+                <li>上衣</li>
+                <li>裙子</li>
+                <li>帽子</li>
+                <li>鞋子</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    </li>
+    <li>品牌闪购<ul class="menu">
+        <li>蔬菜水果
+          <ul>
+            <li>香蕉
+              <ul>
+                <li>香蕉</li>
+                <li>苹果</li>
+                <li>芹菜</li>
+                <li>桃子</li>
+              </ul>
+            </li>
+            <li>苹果
+              <ul>
+                <li>香蕉</li>
+                <li>苹果</li>
+                <li>芹菜</li>
+                <li>桃子</li>
+              </ul>
+            </li>
+            <li>芹菜
+              <ul>
+                <li>香蕉</li>
+                <li>苹果</li>
+                <li>芹菜</li>
+                <li>桃子</li>
+              </ul>
+            </li>
+            <li>桃子
+              <ul>
+                <li>香蕉</li>
+                <li>苹果</li>
+                <li>芹菜</li>
+                <li>桃子</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>营养副食
+          <ul>
+            <li>薯片<ul>
+                <li>薯片</li>
+                <li>方便面</li>
+                <li>麦片</li>
+                <li>锅巴</li>
+              </ul>
+            </li>
+            <li>方便面<ul>
+                <li>薯片</li>
+                <li>方便面</li>
+                <li>麦片</li>
+                <li>锅巴</li>
+              </ul>
+            </li>
+            <li>麦片<ul>
+                <li>薯片</li>
+                <li>方便面</li>
+                <li>麦片</li>
+                <li>锅巴</li>
+              </ul>
+            </li>
+            <li>锅巴<ul>
+                <li>薯片</li>
+                <li>方便面</li>
+                <li>麦片</li>
+                <li>锅巴</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>鞋帽服饰
+          <ul>
+            <li>上衣 <ul>
+                <li>上衣</li>
+                <li>裙子</li>
+                <li>帽子</li>
+                <li>鞋子</li>
+              </ul>
+            </li>
+            <li>裙子 <ul>
+                <li>上衣</li>
+                <li>裙子</li>
+                <li>帽子</li>
+                <li>鞋子</li>
+              </ul>
+            </li>
+            <li>帽子 <ul>
+                <li>上衣</li>
+                <li>裙子</li>
+                <li>帽子</li>
+                <li>鞋子</li>
+              </ul>
+            </li>
+            <li>鞋子 <ul>
+                <li>上衣</li>
+                <li>裙子</li>
+                <li>帽子</li>
+                <li>鞋子</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>日用百货
+          <ul>
+            <li>卫生纸 <ul>
+                <li>上衣</li>
+                <li>裙子</li>
+                <li>帽子</li>
+                <li>鞋子</li>
+              </ul>
+            </li>
+            <li>牙膏 <ul>
+                <li>上衣</li>
+                <li>裙子</li>
+                <li>帽子</li>
+                <li>鞋子</li>
+              </ul>
+            </li>
+            <li>洗衣液 <ul>
+                <li>上衣</li>
+                <li>裙子</li>
+                <li>帽子</li>
+                <li>鞋子</li>
+              </ul>
+            </li>
+            <li>毛巾 <ul>
+                <li>上衣</li>
+                <li>裙子</li>
+                <li>帽子</li>
+                <li>鞋子</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    </li>
+    <li>会员独享<ul class="menu">
+        <li>蔬菜水果
+          <ul>
+            <li>香蕉
+              <ul>
+                <li>香蕉</li>
+                <li>苹果</li>
+                <li>芹菜</li>
+                <li>桃子</li>
+              </ul>
+            </li>
+            <li>苹果
+              <ul>
+                <li>香蕉</li>
+                <li>苹果</li>
+                <li>芹菜</li>
+                <li>桃子</li>
+              </ul>
+            </li>
+            <li>芹菜
+              <ul>
+                <li>香蕉</li>
+                <li>苹果</li>
+                <li>芹菜</li>
+                <li>桃子</li>
+              </ul>
+            </li>
+            <li>桃子
+              <ul>
+                <li>香蕉</li>
+                <li>苹果</li>
+                <li>芹菜</li>
+                <li>桃子</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>营养副食
+          <ul>
+            <li>薯片<ul>
+                <li>薯片</li>
+                <li>方便面</li>
+                <li>麦片</li>
+                <li>锅巴</li>
+              </ul>
+            </li>
+            <li>方便面<ul>
+                <li>薯片</li>
+                <li>方便面</li>
+                <li>麦片</li>
+                <li>锅巴</li>
+              </ul>
+            </li>
+            <li>麦片<ul>
+                <li>薯片</li>
+                <li>方便面</li>
+                <li>麦片</li>
+                <li>锅巴</li>
+              </ul>
+            </li>
+            <li>锅巴<ul>
+                <li>薯片</li>
+                <li>方便面</li>
+                <li>麦片</li>
+                <li>锅巴</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>鞋帽服饰
+          <ul>
+            <li>上衣 <ul>
+                <li>上衣</li>
+                <li>裙子</li>
+                <li>帽子</li>
+                <li>鞋子</li>
+              </ul>
+            </li>
+            <li>裙子 <ul>
+                <li>上衣</li>
+                <li>裙子</li>
+                <li>帽子</li>
+                <li>鞋子</li>
+              </ul>
+            </li>
+            <li>帽子 <ul>
+                <li>上衣</li>
+                <li>裙子</li>
+                <li>帽子</li>
+                <li>鞋子</li>
+              </ul>
+            </li>
+            <li>鞋子 <ul>
+                <li>上衣</li>
+                <li>裙子</li>
+                <li>帽子</li>
+                <li>鞋子</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>日用百货
+          <ul>
+            <li>卫生纸 <ul>
+                <li>上衣</li>
+                <li>裙子</li>
+                <li>帽子</li>
+                <li>鞋子</li>
+              </ul>
+            </li>
+            <li>牙膏 <ul>
+                <li>上衣</li>
+                <li>裙子</li>
+                <li>帽子</li>
+                <li>鞋子</li>
+              </ul>
+            </li>
+            <li>洗衣液 <ul>
+                <li>上衣</li>
+                <li>裙子</li>
+                <li>帽子</li>
+                <li>鞋子</li>
+              </ul>
+            </li>
+            <li>毛巾 <ul>
+                <li>上衣</li>
+                <li>裙子</li>
+                <li>帽子</li>
+                <li>鞋子</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    </li>
+    <li>拍卖<ul class="menu">
+        <li>蔬菜水果
+          <ul>
+            <li>香蕉
+              <ul>
+                <li>香蕉</li>
+                <li>苹果</li>
+                <li>芹菜</li>
+                <li>桃子</li>
+              </ul>
+            </li>
+            <li>苹果
+              <ul>
+                <li>香蕉</li>
+                <li>苹果</li>
+                <li>芹菜</li>
+                <li>桃子</li>
+              </ul>
+            </li>
+            <li>芹菜
+              <ul>
+                <li>香蕉</li>
+                <li>苹果</li>
+                <li>芹菜</li>
+                <li>桃子</li>
+              </ul>
+            </li>
+            <li>桃子
+              <ul>
+                <li>香蕉</li>
+                <li>苹果</li>
+                <li>芹菜</li>
+                <li>桃子</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>营养副食
+          <ul>
+            <li>薯片<ul>
+                <li>薯片</li>
+                <li>方便面</li>
+                <li>麦片</li>
+                <li>锅巴</li>
+              </ul>
+            </li>
+            <li>方便面<ul>
+                <li>薯片</li>
+                <li>方便面</li>
+                <li>麦片</li>
+                <li>锅巴</li>
+              </ul>
+            </li>
+            <li>麦片<ul>
+                <li>薯片</li>
+                <li>方便面</li>
+                <li>麦片</li>
+                <li>锅巴</li>
+              </ul>
+            </li>
+            <li>锅巴<ul>
+                <li>薯片</li>
+                <li>方便面</li>
+                <li>麦片</li>
+                <li>锅巴</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>鞋帽服饰
+          <ul>
+            <li>上衣 <ul>
+                <li>上衣</li>
+                <li>裙子</li>
+                <li>帽子</li>
+                <li>鞋子</li>
+              </ul>
+            </li>
+            <li>裙子 <ul>
+                <li>上衣</li>
+                <li>裙子</li>
+                <li>帽子</li>
+                <li>鞋子</li>
+              </ul>
+            </li>
+            <li>帽子 <ul>
+                <li>上衣</li>
+                <li>裙子</li>
+                <li>帽子</li>
+                <li>鞋子</li>
+              </ul>
+            </li>
+            <li>鞋子 <ul>
+                <li>上衣</li>
+                <li>裙子</li>
+                <li>帽子</li>
+                <li>鞋子</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>日用百货
+          <ul>
+            <li>卫生纸 <ul>
+                <li>上衣</li>
+                <li>裙子</li>
+                <li>帽子</li>
+                <li>鞋子</li>
+              </ul>
+            </li>
+            <li>牙膏 <ul>
+                <li>上衣</li>
+                <li>裙子</li>
+                <li>帽子</li>
+                <li>鞋子</li>
+              </ul>
+            </li>
+            <li>洗衣液 <ul>
+                <li>上衣</li>
+                <li>裙子</li>
+                <li>帽子</li>
+                <li>鞋子</li>
+              </ul>
+            </li>
+            <li>毛巾 <ul>
+                <li>上衣</li>
+                <li>裙子</li>
+                <li>帽子</li>
+                <li>鞋子</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    </li>
+    <li>超市<ul class="menu">
+        <li>蔬菜水果
+          <ul>
+            <li>香蕉
+              <ul>
+                <li>香蕉</li>
+                <li>苹果</li>
+                <li>芹菜</li>
+                <li>桃子</li>
+              </ul>
+            </li>
+            <li>苹果
+              <ul>
+                <li>香蕉</li>
+                <li>苹果</li>
+                <li>芹菜</li>
+                <li>桃子</li>
+              </ul>
+            </li>
+            <li>芹菜
+              <ul>
+                <li>香蕉</li>
+                <li>苹果</li>
+                <li>芹菜</li>
+                <li>桃子</li>
+              </ul>
+            </li>
+            <li>桃子
+              <ul>
+                <li>香蕉</li>
+                <li>苹果</li>
+                <li>芹菜</li>
+                <li>桃子</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>营养副食
+          <ul>
+            <li>薯片<ul>
+                <li>薯片</li>
+                <li>方便面</li>
+                <li>麦片</li>
+                <li>锅巴</li>
+              </ul>
+            </li>
+            <li>方便面<ul>
+                <li>薯片</li>
+                <li>方便面</li>
+                <li>麦片</li>
+                <li>锅巴</li>
+              </ul>
+            </li>
+            <li>麦片<ul>
+                <li>薯片</li>
+                <li>方便面</li>
+                <li>麦片</li>
+                <li>锅巴</li>
+              </ul>
+            </li>
+            <li>锅巴<ul>
+                <li>薯片</li>
+                <li>方便面</li>
+                <li>麦片</li>
+                <li>锅巴</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>鞋帽服饰
+          <ul>
+            <li>上衣 <ul>
+                <li>上衣</li>
+                <li>裙子</li>
+                <li>帽子</li>
+                <li>鞋子</li>
+              </ul>
+            </li>
+            <li>裙子 <ul>
+                <li>上衣</li>
+                <li>裙子</li>
+                <li>帽子</li>
+                <li>鞋子</li>
+              </ul>
+            </li>
+            <li>帽子 <ul>
+                <li>上衣</li>
+                <li>裙子</li>
+                <li>帽子</li>
+                <li>鞋子</li>
+              </ul>
+            </li>
+            <li>鞋子 <ul>
+                <li>上衣</li>
+                <li>裙子</li>
+                <li>帽子</li>
+                <li>鞋子</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li>日用百货
+          <ul>
+            <li>卫生纸 <ul>
+                <li>上衣</li>
+                <li>裙子</li>
+                <li>帽子</li>
+                <li>鞋子</li>
+              </ul>
+            </li>
+            <li>牙膏 <ul>
+                <li>上衣</li>
+                <li>裙子</li>
+                <li>帽子</li>
+                <li>鞋子</li>
+              </ul>
+            </li>
+            <li>洗衣液 <ul>
+                <li>上衣</li>
+                <li>裙子</li>
+                <li>帽子</li>
+                <li>鞋子</li>
+              </ul>
+            </li>
+            <li>毛巾 <ul>
+                <li>上衣</li>
+                <li>裙子</li>
+                <li>帽子</li>
+                <li>鞋子</li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    </li>
+  </ul>
+
+</body>
+
+</html>
