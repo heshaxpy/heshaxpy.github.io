@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>radio slider</title>
+</head>
+<style>
+  section {
+    border: 1px solid;
+    width: 400px;
+    height: 300px;
+    position: relative;
+
+  }
+
+  section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  section ul li {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    transition: .4s;
+  }
+
+  section ul li img {
+    display: block;
+    width: 100%;
+    height: 100%;
+  }
+
+  section ul li label {
+    width: 30px;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+  }
+
+  section ul li label:nth-last-child(2) {
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    height: 50px;
+    margin: auto;
+  }
+
+  section ul li label:nth-last-child(1) {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 50px;
+    margin: auto;
+  }
+
+  section ul li label:nth-last-child(2):hover {
+    background-color: rgba(255, 255, 253, 0.8);
+  }
+
+  section ul li label:nth-last-child(1):hover {
+    background-color: rgba(255, 255, 253, 0.8);
+  }
+
+
+  input:nth-child(1):checked~ul>li:nth-child(1),
+  input:nth-child(2):checked~ul>li:nth-child(2),
+  input:nth-child(3):checked~ul>li:nth-child(3),
+  input:nth-child(4):checked~ul>li:nth-child(4),
+  input:nth-child(5):checked~ul>li:nth-child(5) {
+    opacity: 1;
+    z-index: 10;
+  }
+
+  input {
+    display: none;
+  }
+
+
+  .b1 {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    height: 30px;
+    bottom: 0;
+    z-index: 30;
+  }
+
+  .b2 {
+    border-radius: 25px;
+    background-color: rgba(255, 255, 253, 0.4);
+    display: inline-block;
+    width: 130px;
+  }
+
+  .b1 .b2 label {
+    height: 15px;
+    width: 15px;
+    display: inline-block;
+    background-color: lightblue;
+    cursor: pointer;
+    border-radius: 15px;
+    margin: 4px 0px 0px 0px;
+    transition: 0.5s;
+  }
+
+  input:nth-child(1):checked~.b1 label:nth-child(1),
+  input:nth-child(2):checked~.b1 label:nth-child(2),
+  input:nth-child(3):checked~.b1 label:nth-child(3),
+  input:nth-child(4):checked~.b1 label:nth-child(4),
+  input:nth-child(5):checked~.b1 label:nth-child(5) {
+    background-color: grey;
+  }
+</style>
+
+<body>
+  <section>
+    <input type="radio" checked name="picture" id="p1">
+    <input type="radio" name="picture" id="p2">
+    <input type="radio" name="picture" id="p3">
+    <input type="radio" name="picture" id="p4">
+    <input type="radio" name="picture" id="p5">
+    <ul>
+      <li><a href=""><img src="j1.jpg" alt=""></a><label for="p5">&lt;</label><label for="p2">&gt;</label></li>
+      <li><a href=""><img src="j2.jpg" alt=""></a><label for="p1">&lt;</label><label for="p3">&gt;</label></li>
+      <li><a href=""><img src="j3.jpg" alt=""></a><label for="p2">&lt;</label><label for="p4">&gt;</label></li>
+      <li><a href=""><img src="j4.jpg" alt=""></a><label for="p3">&lt;</label><label for="p5">&gt;</label></li>
+      <li><a href=""><img src="j5.jpg" alt=""></a><label for="p4">&lt;</label><label for="p1">&gt;</label></li>
+    </ul>
+    <div class="b1">
+      <div class="b2">
+        <label for="p1"></label>
+        <label for="p2"></label>
+        <label for="p3"></label>
+        <label for="p4"></label>
+        <label for="p5"></label>
+      </div>
+    </div>
+  </section>
+</body>
+
+</html>
