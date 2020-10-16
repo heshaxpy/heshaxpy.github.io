@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>9-grid</title>
+</head>
+<style>
+  table {
+    border-collapse: collapse;
+    cursor: pointer;
+    border-spacing: 0px;
+  }
+
+  tr,
+  col {
+    border: 5px solid blue;
+  }
+
+  td {
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    padding: 0;
+  }
+
+  td:hover {
+    border: red solid 5px;
+  }
+
+
+
+  ul {
+    width: 170px;
+    font-size: 0;
+    margin-top: 20px;
+    margin-left: -34px;
+  }
+
+  li {
+    font-size: 16px;
+    display: inline-block;
+    border: 5px solid blue;
+    width: 50px;
+    height: 50px;
+    margin-left: -5px;
+    margin-bottom: -5px;
+    position: relative;
+    text-align: center;
+    line-height: 50px;
+    list-style: none;
+  }
+
+  li:hover {
+    border-color: red;
+    z-index: 10;
+  }
+
+
+
+
+  div {
+    font-size: 0;
+    width: 170px;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  a {
+    display: inline-block;
+    border: 5px solid blue;
+    width: 50px;
+    height: 50px;
+    font-size: 16px;
+    margin-right: -5px;
+    margin-bottom: -5px;
+    position: relative;
+    line-height: 50px;
+    text-decoration: none;
+  }
+
+  a:hover {
+    border-color: red;
+    z-index: 20;
+  }
+</style>
+
+<body>
+  <table>
+    <col>
+    <col>
+    <col>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>5</td>
+      <td>6</td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>8</td>
+      <td>9</td>
+    </tr>
+  </table>
+
+
+  <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+    <li>8</li>
+    <li>9</li>
+  </ul>
+
+
+  <div>
+    <a href="">1</a>
+    <a href="">2</a>
+    <a href="">3</a>
+    <a href="">4</a>
+    <a href="">5</a>
+    <a href="">6</a>
+    <a href="">7</a>
+    <a href="">8</a>
+    <a href="">9</a>
+  </div>
+</body>
+
+</html>
