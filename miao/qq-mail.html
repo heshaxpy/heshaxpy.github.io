@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>qq-mail</title>
+</head>
+<style>
+  section {
+    position: relative;
+  }
+
+  .hang {
+    height: 65px;
+    background: lightslategray;
+    line-height: 65px;
+  }
+
+  .hang img {
+    vertical-align: middle;
+    height: 30px;
+    margin-left: 10px;
+  }
+
+  .lie1 {
+    position: absolute;
+    width: 190px;
+    height: 600px;
+    background: lightgray;
+    font-size: 18px;
+  }
+
+  .lie1 a {
+    display: block;
+    text-decoration: none;
+    margin-left: 15px;
+    margin-top: 10px;
+  }
+
+  .lie2 {
+    position: absolute;
+    height: 600px;
+    left: 190px;
+    overflow: scroll;
+    background-color: lightgrey;
+    font-size: 13px;
+  }
+
+  .lie1 a img {
+    background-image: url(https://rescdn.qqmail.com/zh_CN/htmledition/images/newicon/mail4788ca.png);
+    display: inline-block;
+    width: 15px;
+    height: 16px;
+    margin: 3px;
+    vertical-align: middle;
+  }
+
+  .receive {
+    background-position: -49px -32px;
+  }
+
+  .send {
+    background-position: -48px -48px;
+  }
+
+  .drafts {
+    background-position: -48px -80px;
+  }
+
+  .dustbin {
+    background-position: -127px -78px;
+  }
+
+  .star {
+    background-position: -47px -159px;
+  }
+</style>
+
+<body>
+  <section>
+    <div class="hang"><a href="https://mail.qq.com/" target="_blank"><img
+          src="https://rescdn.qqmail.com/zh_CN/htmledition/images/logo/qqmail/qqmail_logo_default_35h206ff1.png"
+          alt=""></a></div>
+    <div class="lie1">
+      <a href="">收件箱<img src="" class="receive" alt=""></a>
+      <a href="">发件箱<img src="" class="send" alt=""></a>
+      <a href="">草稿箱<img src="" class="drafts" alt=""></a>
+      <a href="">垃圾箱<img src="" class="dustbin" alt=""></a>
+      <a href="">星标邮件<img src="" class="star" alt=""></a>
+    </div>
+    <div class="lie2">
+      最近在做邮箱页面（也不知道是不是这样称呼，反正就是做好的页面发送到邮箱的），总结了些心得，在这里贴出来和大家讨论讨论：
+      我是采用table+css布局的，听说是table+css比div+cs的要好，至于这个你信不信，我管不着，因为我没去查证过。
+      因为邮箱页面是在腾讯邮箱原有样式的基础上来继续做的，所以有些样式会影响到整体的，样式采用内联式（外联和嵌入式是插不进的）。
+      表格布局，我们就会很自然而然的少用到浮动，能不用的尽量就不要用到这位“大神仙”了，它太难请了，用的比补回去的还要多，不划算。我们一些做好的在任何主浏览器里面测试都ok的页面发送到邮箱，会让你出乎意料，它不一定全部兼容，或许还可能很糟糕，这里不重点讲了。我们接下来说说“定位”。我试过绝对定位，在页面里面，采用表格布局，相对参照物的绝对定位物体的父集，不是body，页面浏览的时候，火狐是不认识的，他还是会按照body来，除非你在父集里面固定样式的宽和高，还有最最重要的display：block这句，这样写火狐就没问题了，但这仅仅只是在普通的页面浏览上，一发送到邮箱，不止火狐，包括其他，如ie678,360，谷歌，歌剧，苹果等浏览器都乱套了，（当然，绝对定位还有个坏处，就是不安全，你绝对定位了，人家又看不到，如果在发送的时候放个危险木马病毒啥的进去，我们邮箱接收了就惨了）比如：
+
+      html:(部分)
+      优点：
+
+      1.支持跨浏览器，包括IE8-IE10.
+
+      2.无需其他特殊标记，CSS代码量少
+
+      3.支持百分比%属性值和min-/max-属性
+
+      4.只用这一个类可实现任何内容块居中
+
+      5.不论是否设置padding都可居中（在不使用box-sizing属性的前提下）
+
+      6.内容块可以被重绘。
+
+      7.完美支持图片居中。
+
+      缺点：
+
+      1.必须声明高度（查看可变高度Variable Height）。
+
+      2.建议设置overflow:auto来防止内容越界溢出。（查看溢出Overflow）。
+
+      3.在Windows Phone设备上不起作用。
+
+      浏览器兼容性：
+
+      Chrome,Firefox, Safari, Mobile Safari, IE8-10.
+
+      绝对定位方法在最新版的Chrome,Firefox, Safari, Mobile Safari, IE8-10.上均测试通过。
+
+      对比表格：
+
+      绝对居中法并不是唯一的实现方法，实现垂直居中还有些其他的方法，并各有各的优势。采用哪种技术取决于你的浏览器是否支持和你使用的语言标记。这个对照表有助于你根据自己的需求做出正确的选择。
+    </div>
+
+    <section>
+</body>
+
+</html>
