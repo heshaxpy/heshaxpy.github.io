@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  * {
+  box-shadow: 0 0 1px red;
+}
+  section{
+  width: 200px;
+  height: 200px;
+  margin: auto;
+  position:relative;
+  transform-style:preserve-3d;
+  transform:rotatex(360deg) rotatey(360deg);
+  animation:ro 3s linear 999;
+}
+
+
+div{
+  position:absolute;
+  top:0;
+  right:0;
+  left:0;
+  bottom:0;
+  margin:auto;
+  width:100px;
+  height: 100px; 
+  transform:translatez(50px);
+  opacity:.6;
+} 
+
+@keyframes ro{
+  from{
+    transform:rotatex(0deg) rotatey(0deg);
+  }
+  to{
+    transform:rotate(360eg) rotatey(720deg);
+  }
+}
+
+
+.front{
+  transform:rotate(0deg) translatez(50px);
+}
+.back{
+  transform:rotatey(180deg) translatez(50px);
+}
+
+.top{
+  transform:rotatex(90deg) translatez(50px);
+}
+
+.bottom{
+  transform:rotatex(-90deg) translatez(50px);
+}
+
+.left{
+  transform:rotatey(90deg)  translatez(50px);
+}
+.right{
+  transform:rotatey(-90deg)  translatez(50px);
+}
+
+table{
+  width: 100%;
+  height: 100%;
+  border-collapse: collapse;
+}
+
+</style>
+<body>
+  <section>
+  <div class="front">
+    <table>
+      <tr>
+        <td bgcolor="#f00"></td>
+        <td bgcolor="#f10"></td>
+        <td bgcolor="#f20"></td>
+        <td bgcolor="#f30"></td>
+        <td bgcolor="#f40"></td>
+        <td bgcolor="#f50"></td>
+        <td bgcolor="#f60"></td>
+        <td bgcolor="#f70"></td>
+        <td bgcolor="#f80"></td>
+        <td bgcolor="#f90"></td>
+        <td bgcolor="#fa0"></td>
+        <td bgcolor="#fb0"></td>
+        <td bgcolor="#fc0"></td>
+        <td bgcolor="#fd0"></td>
+        <td bgcolor="#fe0"></td>
+        <td bgcolor="#ff0"></td>
+      </tr>
+      <tr>
+        <td bgcolor="#f01"></td>
+        <td bgcolor="#f11"></td>
+        <td bgcolor="#f21"></td>
+        <td bgcolor="#f31"></td>
+        <td bgcolor="#f41"></td>
+        <td bgcolor="#f51"></td>
+        <td bgcolor="#f61"></td>
+        <td bgcolor="#f71"></td>
+        <td bgcolor="#f81"></td>
+        <td bgcolor="#f91"></td>
+        <td bgcolor="#fa1"></td>
+        <td bgcolor="#fb1"></td>
+        <td bgcolor="#fc1"></td>
+        <td bgcolor="#fd1"></td>
+        <td bgcolor="#fe1"></td>
+        <td bgcolor="#ff1"></td>
+      </tr>
+      <tr>
+        <td bgcolor="#f02"></td>
+        <td bgcolor="#f12"></td>
+        <td bgcolor="#f22"></td>
+        <td bgcolor="#f32"></td>
+        <td bgcolor="#f42"></td>
+        <td bgcolor="#f52"></td>
+        <td bgcolor="#f62"></td>
+        <td bgcolor="#f72"></td>
+        <td bgcolor="#f82"></td>
+        <td bgcolor="#f92"></td>
+        <td bgcolor="#fa2"></td>
+        <td bgcolor="#fb2"></td>
+        <td bgcolor="#fc2"></td>
+        <td bgcolor="#fd2"></td>
+        <td bgcolor="#fe2"></td>
+        <td bgcolor="#ff2"></td>
+      </tr>
+      <tr>
+        <td bgcolor="#f03"></td>
+        <td bgcolor="#f13"></td>
+        <td bgcolor="#f23"></td>
+        <td bgcolor="#f33"></td>
+        <td bgcolor="#f43"></td>
+        <td bgcolor="#f53"></td>
+        <td bgcolor="#f63"></td>
+        <td bgcolor="#f73"></td>
+        <td bgcolor="#f83"></td>
+        <td bgcolor="#f93"></td>
+        <td bgcolor="#fa3"></td>
+        <td bgcolor="#fb3"></td>
+        <td bgcolor="#fc3"></td>
+        <td bgcolor="#fd3"></td>
+        <td bgcolor="#fe3"></td>
+        <td bgcolor="#ff3"></td>
+      </tr>
+      <tr>
+        <td bgcolor="#f04"></td>
+        <td bgcolor="#f14"></td>
+        <td bgcolor="#f24"></td>
+        <td bgcolor="#f34"></td>
+        <td bgcolor="#f44"></td>
+        <td bgcolor="#f54"></td>
+        <td bgcolor="#f64"></td>
+        <td bgcolor="#f74"></td>
+        <td bgcolor="#f84"></td>
+        <td bgcolor="#f94"></td>
+        <td bgcolor="#fa4"></td>
+        <td bgcolor="#fb4"></td>
+        <td bgcolor="#fc4"></td>
+        <td bgcolor="#fd4"></td>
+        <td bgcolor="#fe4"></td>
+        <td bgcolor="#ff4"></td>
+      </tr>
+      <tr>
+        <td bgcolor="#f05"></td>
+        <td bgcolor="#f15"></td>
+        <td bgcolor="#f25"></td>
+        <td bgcolor="#f35"></td>
+        <td bgcolor="#f45"></td>
+        <td bgcolor="#f55"></td>
+        <td bgcolor="#f65"></td>
+        <td bgcolor="#f75"></td>
+        <td bgcolor="#f85"></td>
+        <td bgcolor="#f95"></td>
+        <td bgcolor="#fa5"></td>
+        <td bgcolor="#fb5"></td>
+        <td bgcolor="#fc5"></td>
+        <td bgcolor="#fd5"></td>
+        <td bgcolor="#fe5"></td>
+        <td bgcolor="#ff5"></td>
+      </tr>
+      <tr>
+        <td bgcolor="#f06"></td>
+        <td bgcolor="#f16"></td>
+        <td bgcolor="#f26"></td>
+        <td bgcolor="#f36"></td>
+        <td bgcolor="#f46"></td>
+        <td bgcolor="#f56"></td>
+        <td bgcolor="#f66"></td>
+        <td bgcolor="#f76"></td>
+        <td bgcolor="#f86"></td>
+        <td bgcolor="#f96"></td>
+        <td bgcolor="#fa6"></td>
+        <td bgcolor="#fb6"></td>
+        <td bgcolor="#fc6"></td>
+        <td bgcolor="#fd6"></td>
+        <td bgcolor="#fe6"></td>
+        <td bgcolor="#ff6"></td>
+      </tr>
+      <tr>
+        <td bgcolor="#f07"></td>
+        <td bgcolor="#f17"></td>
+        <td bgcolor="#f27"></td>
+        <td bgcolor="#f37"></td>
+        <td bgcolor="#f47"></td>
+        <td bgcolor="#f57"></td>
+        <td bgcolor="#f67"></td>
+        <td bgcolor="#f77"></td>
+        <td bgcolor="#f87"></td>
+        <td bgcolor="#f97"></td>
+        <td bgcolor="#fa7"></td>
+        <td bgcolor="#fb7"></td>
+        <td bgcolor="#fc7"></td>
+        <td bgcolor="#fd7"></td>
+        <td bgcolor="#fe7"></td>
+        <td bgcolor="#ff7"></td>
+      </tr>
+      <tr>
+        <td bgcolor="#f08"></td>
+        <td bgcolor="#f18"></td>
+        <td bgcolor="#f28"></td>
+        <td bgcolor="#f38"></td>
+        <td bgcolor="#f48"></td>
+        <td bgcolor="#f58"></td>
+        <td bgcolor="#f68"></td>
+        <td bgcolor="#f78"></td>
+        <td bgcolor="#f88"></td>
+        <td bgcolor="#f98"></td>
+        <td bgcolor="#fa8"></td>
+        <td bgcolor="#fb8"></td>
+        <td bgcolor="#fc8"></td>
+        <td bgcolor="#fd8"></td>
+        <td bgcolor="#fe8"></td>
+        <td bgcolor="#ff8"></td>
+      </tr>
+      <tr>
+        <td bgcolor="#f09"></td>
+        <td bgcolor="#f19"></td>
+        <td bgcolor="#f29"></td>
+        <td bgcolor="#f39"></td>
+        <td bgcolor="#f49"></td>
+        <td bgcolor="#f59"></td>
+        <td bgcolor="#f69"></td>
+        <td bgcolor="#f79"></td>
+        <td bgcolor="#f89"></td>
+        <td bgcolor="#f99"></td>
+        <td bgcolor="#fa9"></td>
+        <td bgcolor="#fb9"></td>
+        <td bgcolor="#fc9"></td>
+        <td bgcolor="#fd9"></td>
+        <td bgcolor="#fe9"></td>
+        <td bgcolor="#ff9"></td>
+      </tr>
+      <tr>
+        <td bgcolor="#f0a"></td>
+        <td bgcolor="#f1a"></td>
+        <td bgcolor="#f2a"></td>
+        <td bgcolor="#f3a"></td>
+        <td bgcolor="#f4a"></td>
+        <td bgcolor="#f5a"></td>
+        <td bgcolor="#f6a"></td>
+        <td bgcolor="#f7a"></td>
+        <td bgcolor="#f8a"></td>
+        <td bgcolor="#f9a"></td>
+        <td bgcolor="#faa"></td>
+        <td bgcolor="#fba"></td>
+        <td bgcolor="#fca"></td>
+        <td bgcolor="#fda"></td>
+        <td bgcolor="#fea"></td>
+        <td bgcolor="#ffa"></td>
+      </tr>
+      <tr>
+        <td bgcolor="#f0b"></td>
+        <td bgcolor="#f1b"></td>
+        <td bgcolor="#f2b"></td>
+        <td bgcolor="#f3b"></td>
+        <td bgcolor="#f4b"></td>
+        <td bgcolor="#f5b"></td>
+        <td bgcolor="#f6b"></td>
+        <td bgcolor="#f7b"></td>
+        <td bgcolor="#f8b"></td>
+        <td bgcolor="#f9b"></td>
+        <td bgcolor="#fab"></td>
+        <td bgcolor="#fbb"></td>
+        <td bgcolor="#fcb"></td>
+        <td bgcolor="#fdb"></td>
+        <td bgcolor="#feb"></td>
+        <td bgcolor="#ffb"></td>
+      </tr>
+      <tr>
+        <td bgcolor="#f0c"></td>
+        <td bgcolor="#f1c"></td>
+        <td bgcolor="#f2c"></td>
+        <td bgcolor="#f3c"></td>
+        <td bgcolor="#f4c"></td>
+        <td bgcolor="#f5c"></td>
+        <td bgcolor="#f6c"></td>
+        <td bgcolor="#f7c"></td>
+        <td bgcolor="#f8c"></td>
+        <td bgcolor="#f9c"></td>
+        <td bgcolor="#fac"></td>
+        <td bgcolor="#fbc"></td>
+        <td bgcolor="#fcc"></td>
+        <td bgcolor="#fdc"></td>
+        <td bgcolor="#fec"></td>
+        <td bgcolor="#ffc"></td>
+      </tr>
+      <tr>
+        <td bgcolor="#f0d"></td>
+        <td bgcolor="#f1d"></td>
+        <td bgcolor="#f2d"></td>
+        <td bgcolor="#f3d"></td>
+        <td bgcolor="#f4d"></td>
+        <td bgcolor="#f5d"></td>
+        <td bgcolor="#f6d"></td>
+        <td bgcolor="#f7d"></td>
+        <td bgcolor="#f8d"></td>
+        <td bgcolor="#f9d"></td>
+        <td bgcolor="#fad"></td>
+        <td bgcolor="#fbd"></td>
+        <td bgcolor="#fcd"></td>
+        <td bgcolor="#fdd"></td>
+        <td bgcolor="#fed"></td>
+        <td bgcolor="#ffd"></td>
+      </tr>
+      <tr>
+        <td bgcolor="#f0e"></td>
+        <td bgcolor="#f1e"></td>
+        <td bgcolor="#f2e"></td>
+        <td bgcolor="#f3e"></td>
+        <td bgcolor="#f4e"></td>
+        <td bgcolor="#f5e"></td>
+        <td bgcolor="#f6e"></td>
+        <td bgcolor="#f7e"></td>
+        <td bgcolor="#f8e"></td>
+        <td bgcolor="#f9e"></td>
+        <td bgcolor="#fae"></td>
+        <td bgcolor="#fbe"></td>
+        <td bgcolor="#fce"></td>
+        <td bgcolor="#fde"></td>
+        <td bgcolor="#fee"></td>
+        <td bgcolor="#ffe"></td>
+      </tr>
+      <tr>
+        <td bgcolor="#f0f"></td>
+        <td bgcolor="#f1f"></td>
+        <td bgcolor="#f2f"></td>
+        <td bgcolor="#f3f"></td>
+        <td bgcolor="#f4f"></td>
+        <td bgcolor="#f5f"></td>
+        <td bgcolor="#f6f"></td>
+        <td bgcolor="#f7f"></td>
+        <td bgcolor="#f8f"></td>
+        <td bgcolor="#f9f"></td>
+        <td bgcolor="#faf"></td>
+        <td bgcolor="#fbf"></td>
+        <td bgcolor="#fcf"></td>
+        <td bgcolor="#fdf"></td>
+        <td bgcolor="#fef"></td>
+        <td bgcolor="#fff"></td>
+      </tr>
+    </table>
+  </div>
+  <div class="back">
+  </div>
+  <div class="top"> 
+  </div>
+  <div class="bottom"></div>
+  <div class="left"></div>
+  <div class="right"></div>
+</section>
+</body>
+</html>
