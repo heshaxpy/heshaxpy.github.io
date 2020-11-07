@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  button{
+  display:block;
+  width: 20%;
+  margin:50px auto;
+  padding:5px;
+  background-color: rgb(183,18,18);
+  color:white;
+  border-radius:5px;
+  border:none;
+  color:s
+}
+
+[aria-label]{
+  position:relative;
+}
+
+[data-balloon-pos]::before{
+  content:attr(aria-label);
+  position:absolute;
+  background-color:black;
+  box-sizing:border-box;
+  padding:5px;
+  border-radius:.2em;
+  width: max-content;
+  opacity:0;
+  pointer-events:none;
+}
+
+[data-balloon-pos]::after{
+  content:"";
+  position:absolute;
+  border:5px solid;
+  opacity:0;
+  pointer-events:none;
+}
+
+
+[data-balloon-pos="top"]::before{
+  bottom:calc(100% + 10px);
+  transform:translate(-50%) translatey(12px);
+  left:50%;
+}
+[data-balloon-pos="top"]::after{
+  top:-10px;
+  transform:translate(-50%) translatey(12px);
+  left:50%;
+  border-color:black transparent transparent  transparent;
+}
+
+
+[data-balloon-pos="bottom"]::before{
+  top:calc(100% + 10px);
+  transform:translate(-50%) translatey(-12px);
+  left:50%;;
+}
+
+[data-balloon-pos="bottom"]::after{
+  bottom:-10px;
+  transform:translate(-50%) translatey(-12px);
+  left:50%;
+  border-color: transparent transparent black transparent;
+}
+
+
+[data-balloon-pos="left"]::before{
+  right:calc(100% + 10px);
+  transform: translate(0,-50%) translatex(12px);
+  top:50%;
+}
+[data-balloon-pos="left"]::after{
+  left:-10px;
+  transform:translate(0,-50%) translatex(12px);
+  top:50%;
+  border-color: transparent transparent  transparent black;
+}
+
+
+[data-balloon-pos="right"]::before{
+  left:calc(100% + 10px);
+  transform:translate(0,-50%) translatex(-12px);
+  top:50%;
+}
+
+[data-balloon-pos="right"]::after{
+  right:-10px;
+  transform:translatey(0,-50%) translatex(-12px);
+  top:50%;
+  border-color: transparent  black transparent  transparent;
+}
+
+button:hover::before,
+button:hover::after{
+  opacity:1;
+  transition:.3s;
+}
+
+[aria-label][data-balloon-pos="top"]:hover::before,
+[aria-label][data-balloon-pos="top"]:hover::after{
+  transform:translate(-50%);
+}
+
+[aria-label][data-balloon-pos="bottom"]:hover::before,
+[aria-label][data-balloon-pos="bottom"]:hover::after{
+  transform:translate(-50%);
+}
+[aria-label][data-balloon-pos="left"]:hover::before,
+[aria-label][data-balloon-pos="left"]:hover::after{
+  transform:translate(0,-50%);
+}
+[aria-label][data-balloon-pos="right"]:hover::before,
+[aria-label][data-balloon-pos="right"]:hover::after{
+  transform:translate(0,-50%);
+}
+
+
+
+[aria-label][data-balloon-length="small"]::before{
+  width: 80px;
+}
+[aria-label][data-balloon-length="medium"]::before{
+  width: 150px;
+}
+
+[aria-label][data-balloon-length="large"]::before{
+  width: 260px;
+}
+[aria-label][data-balloon-length="xlarge"]::before{
+  width:389px;
+}
+[aria-label][data-balloon-length="fit"]::before{
+  width: 100%;
+}
+</style>
+<body>
+<button aria-label="hello world" data-balloon-pos="top">Touch me</button>
+<button aria-label="hello world" data-balloon-pos="bottom">Touch me</button>
+<button aria-label="hello world" data-balloon-pos="left">Touch me</button>
+<button aria-label="hello world" data-balloon-pos="right">Touch me</button>
+<button aria-label="hello world" data-balloon-length="small" data-balloon-pos="top">small</button>
+<button aria-label="hello world" data-balloon-length="medium" data-balloon-pos="top">medium</button>
+<button aria-label="hello world" data-balloon-length="large" data-balloon-pos="top">large</button>
+<button aria-label="hello world" data-balloon-length="xlarge" data-balloon-pos="top">Xlarge</button>
+<button aria-label="hello world Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam ea saepe iure debitis possimus, in. Vitae repudiandae sit nam autem excepturi, fugiat. Necessitatibus iste, illum nobis libero distinctio exercitationem minus." data-balloon-length="fit" data-balloon-pos="top">fit</button>
+</body>
+</html>
