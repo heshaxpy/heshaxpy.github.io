@@ -34,8 +34,8 @@
 <script type="f" id="ch0103/05">
   var a = Number(prompt("请输入a"))
   var b = Number(prompt("请输入b(不能为0)"))
-  var c = ( a / b ).toFixed(9)
-  console.log("浮点数值为" + c )
+  var c = a / b 
+  console.log("浮点数值为" + c.toFixed(9) )
 </script>
 
 
@@ -61,7 +61,7 @@
 <script type="D" id="ch0103/08">
   var F = Number(prompt("请输入华氏温度(f >= -459.67)"))
   var C = 5 * (F -32) / 9
-  console.log(C + '°C')
+  console.log(C.toFixed(5) + '°C')
 </script>
 
 
@@ -70,9 +70,9 @@
   var D = 2 * R
   var C = 2 * Math.PI * R
   var S = Math.PI * R * R
-    console.log(D)
-    console.log(C)
-    console.log(S)
+    console.log(D.toFixed(4))
+    console.log(C.toFixed(4))
+    console.log(S.toFixed(4))
 </script>
 
 <script type="c" id="ch0103/10">
