@@ -87,12 +87,13 @@
   var a = Number(prompt("请输入双精度浮点数a (a>0)"))
   var b = Number(prompt("请输入双精度浮点数b (b>0)"))
   var r = a - 6 * b
-  console.log('余数r=' + r)
+  console.log('余数r=' + r.toFixed(4))
 </script>
 
 <script type="d" id="ch0103/12">
   var r = Number(prompt("请输入球的半径 (0<r<100)"))
-  var V = ( 4 / 3 ) * 3.14 * r * r * r 
+  var pi = 3.14
+  var V = ( 4 / 3 ) * pi * r * r * r 
   console.log('球的体积V=' + V.toFixed(2))
 </script>
 
@@ -111,15 +112,15 @@
   var h = Number(prompt("请输入桶的深度(单位：cm)"))
   var r = Number(prompt("请输入桶的底面半径(单位：cm)"))
   var x = 20000/ (Math.PI * r * r * h)
-  console.log('大象至少需要喝'+ Math.ceil.x +'桶水')  
+  console.log('大象至少需要喝'+ Math.ceil(x) +'桶水')  
 </script>
 
 <script type="g" id="ch0103/15">
   var n = Number(prompt("一共买了几箱苹果（请输入整数）"))
   var x = Number(prompt("虫子每几个小时吃掉一个苹果（请输入整数，保证y <= n * x）"))
   var y = Number(prompt("经过了几个小时（请输入整数）"))
-  var a = n - x * y
-  console.log('经过'+ y +'小时后还剩'+ a +'个苹果')
+  var a = n - y * x
+  console.log('经过'+ y +'小时后还剩'+ Math.floor(a) +'个苹果')
 </script>
 
 <script type="d" id="ch0103/16">
@@ -128,7 +129,7 @@
   var Xb = Number(prompt("请输入B的X坐标（输入值的绝对值不超过10000）"))
   var Yb = Number(prompt("请输入B的X坐标（输入值的绝对值不超过10000）"))
   var L = Math.sqrt((Ya - Yb) * (Ya - Yb) + (Xa - Xb) * (Xa - Xb))
-  console.log('两点之间的线段长度为'+ L )
+  console.log('两点之间的线段长度为'+ L.toFixed(3) )
 </script>
 
 <script type="d" id="ch0103/17">
@@ -140,7 +141,7 @@
   var y3 = Number(prompt("请输入第三个点的y坐标"))
   var P = (Math.sqrt((y3-y2)*(y3-y2)+(x3-x2)*(x3-x2)) + Math.sqrt((y3-y1)*(y3-y1)+(x3-x1)*(x3-x1)) +Math.sqrt((y2-y1)*(y2-y1)+(x2-x1)*(x2-x1))) / 2
   var S = Math.sqrt(P*(P-Math.sqrt((y3-y2)*(y3-y2)+(x3-x2)*(x3-x2)))*(P-Math.sqrt((y3-y1)*(y3-y1)+(x3-x1)*(x3-x1)))*(P-Math.sqrt((y2-y1)*(y2-y1)+(x2-x1)*(x2-x1))))
-  console.log('三角形面积为'+ S )
+  console.log('三角形面积为'+ S.toFixed(2) )
 </script>
 
 <script type="g" id="ch0103/18">
@@ -162,8 +163,7 @@
 
 <script type="f" id="ch0103/20">
   var n = Number(prompt("请输入指定的指数n（0 <= n < 31）"))
-  var X = 2 ** n
-  console.log('2的'+ n + '次方为' + X )
+  console.log('2的'+ n + '次方为' + Math.pow(2,a) )
 </script>
 
 
