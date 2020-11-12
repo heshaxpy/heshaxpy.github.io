@@ -465,7 +465,8 @@
      sum = sum + age
      c = c + 1
    }
-   console.log(sum / n)
+   var avg = sum / n
+   console.log( avg.toFixed(2) )
 </script>
 
 <script type="f" id="ch0105/02">
@@ -503,19 +504,20 @@
     var sample = Number(prompt("第" + (c + 1) + "个整数为"))
     sum = sum + sample
     c = c + 1
+    
   }
-  console.log(sum .toFixed(5))
-  console.log((sum / n).toFixed(5))
+  var avg = sum / n
+  console.log( sum.toFixed(5) )
+  console.log( avg.toFixed(5) )
 </script>
 
 <script type="e" id="ch0105/05">
   var n = Number(prompt("考试人数为"))
-  var score = Number(prompt("第1个人的分数为"))
-  var c = 1
+  var c = 0
   var max = score
 
   while (c < n) {
-    var score = Number(prompt("第" + (c + 1) + "个人的分数为"))
+    var score = Number(prompt("第" + c + "个人的分数为"))
     if (score > max){
       max = score
     }
@@ -525,16 +527,14 @@
 </script>
 
 
-<script type="" id="ch0105/06">
+<script type="d" id="ch0105/06">
   var n = Number(prompt("个数为"))
-  var x = Number(prompt("第1个的数为"))
-  var y = Number(prompt("第1个的数为"))
-  var c = 1
-  var max = x
+  var c = 0
+  var max = -99999999999999
+  var min = 99999999999999
   
-
   while (c < n) {
-    var x = Number(prompt("数为"))
+    var x = Number(prompt("第" + (c + 1) + "个数为"))
     if (x > max){
       max = x
     }
@@ -545,5 +545,141 @@
   }
   console.log(max - min)
 </script>
+
+
+<script type="f" id="ch0105/07">
+  var n = Number(prompt("天数为"))
+  var c = 0
+  var sum_gold = 0
+  var sum_silver = 0 
+  var sum_copper = 0
+
+  while (c < n) {
+  var gold = Number(prompt("第" + (c + 1) + "天金牌数为"))
+  var silver = Number(prompt("第" + (c + 1) + "天银牌数为"))
+  var copper = Number(prompt("第" + (c + 1) + "天铜牌数为"))
+  sum_gold = gold + sum_gold
+  sum_silver = silver + sum_silver 
+  sum_copper = copper + sum_copper
+  c = c + 1
+  }
+  var sum = sum_gold + sum_silver + sum_copper
+  console.log(sum_gold , sum_silver , sum_copper , sum)
+</script>
+
+<script type="d" id="ch0105/08">
+  var n = Number(prompt("几边形")) 
+  var c = 1
+  var sum_angle = (n - 2) * 180
+  var known_sum = 0
+
+  while (c < n) {
+    var angle = Number(prompt("请输入角度"))
+    var known_sum = known_sum + angle
+    c = c + 1
+  }
+  var rest_angle = sum_angle - known_sum
+  console.log(rest_angle)
+</script>
+
+
+<script type="f" id="ch0105/09">
+  var m = Number(prompt("请输入m")) 
+  var n = Number(prompt("请输入n")) 
+  var sum = 0
+  
+  for (var c = m; c<= n; c = c + 1){
+    if (c % 2 == 1) {
+      sum = sum + c
+    }
+  }
+  console.log(sum)
+</script>
+
+
+<script type="d" id="ch0105/10">
+  var m = Number(prompt("请输入m")) 
+  var n = Number(prompt("请输入n")) 
+  var sum = 0
+  
+  for (var c = m; c<= n; c = c + 1){
+    if (c % 17 == 0) {
+      sum = sum + c
+    }
+  }
+  console.log(sum)
+</script>
+
+<script type="D" id="ch0105/11">
+  var k = Number(prompt("请输入k")) 
+  var time_1 = 0
+  var time_5 = 0
+  var time_10 = 0
+
+
+  for (var c = 0; c < k; c++) {
+    var n = Number(prompt("请输入n")) 
+    
+    if (n == 1){
+      time_1++
+    } else if (n == 5){
+      time_5++
+    } else if (n == 10){
+      time_10++
+    }
+  }
+  console.log(time_1, time_5, time_10)
+</script>
+
+
+<script type="d" id="ch0105/12">
+  
+  var N = Number(prompt('输入整数序列长度'))
+  var m = Number(prompt('输入指定数字'))
+  var time = 0
+
+  for (var i = 0; i < N; i++) {
+    var x = Number(prompt())
+    if (x == m) {
+      time++
+    } 
+  }
+
+  console.log(time)
+</script>
+
+
+<script type="F" id="ch0105/13">
+  
+  var a = Number(prompt('输入整数a'))
+  var n = Number(prompt('输入正整数n'))
+  var product = 1
+
+  for (var i = 0; i < n; i++) {
+    product *= a
+  }
+  console.log(product)
+</script>
+
+<script type="d" id="ch0105/14">
+  var x = Number(prompt('输入现有人口'))
+  var n = Number(prompt('请输入几年后'))
+
+  for (var i = 0; i < n; i++) {
+    x = 1.001 * x
+  }
+  console.log(x.toFixed(4))
+</script>
+
+<script type="" id="ch0105/14">
+  var x = Number(prompt('输入现有人口'))
+  var n = Number(prompt('请输入几年后'))
+
+  for (var i = 0; i < n; i++) {
+    x = 1.001 * x
+  }
+  console.log(x.toFixed(4))
+</script>
+
 
 
