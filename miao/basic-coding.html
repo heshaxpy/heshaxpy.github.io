@@ -194,18 +194,18 @@
   if (n % 2 == 0){
     console.log ( n +"为even" )
   }
-  else if(n % 2 != 0){
+  else {
     console.log ( n +"为odd" )
   }
 </script>
 
 <script type="g" id="ch0104/04">
   var char = prompt("请输入整数ASCII码")
-  if (char == 'a' || char == 'c' || char == 'e' || char == 'g' || char == 'i' ){
-    console.log ( "YES" )
+  if (char % 2 === 0 ){
+    console.log ( "NO" )
   }
   else {
-    console.log ( "NO" )
+    console.log ( "YES" )
   }
 </script>
 
