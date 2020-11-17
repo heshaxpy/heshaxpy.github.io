@@ -824,7 +824,7 @@ for (i = 1; i < 10 ; i++){
 console.log(c)
 </script>
 
-<script type="" id="ch0105/24">
+<script type="f" id="ch0105/24">
 
   var n = Number(prompt('请输入正整数n'))
   var c = 0
@@ -845,6 +845,114 @@ console.log(c)
   }
   console.log(tran)  
 </script>
+
+
+<script type="g" id="ch0105/25">
+
+  for (var i = 1; i<= 999; i++) {
+    var a7 = i % 7  //7进制的个位数
+    var b7 = ( i - a7 ) / 7 % 7  //7进制的十位数
+    var c7 = ( i - a7 - b7 * 7 ) / 7 / 7 % 7  //7进制的百位数
+
+    var a9 = i % 9 // 9进制的个位数
+    var b9 = ( i - a9 ) / 9 % 9 //9进制的十位数
+    var c9 = ( i - a9 - b9 * 9 ) / 9 / 9 % 9 // 9进制的百位数
+
+    if (a7 == c9 && b7 == b9 && c7 == a9) {
+      console.log(i, ''+ c7 + b7 + a7, ''+ c9 + b9 + a9) 
+      break
+    }
+  }
+
+</script>
+
+<script type="f" id="ch0105/26">
+  var n = Number(prompt())
+  var time = 0
+
+  for (var i = 0; i < n; i++) {
+  var m = Number(prompt())
+
+  var a = m % 10  //个位数字
+  var b = ( m - a ) / 10 % 10 //十位数字 
+  var c = ( m - a - b * 10 ) / 100 % 10  // 百位数字
+  var d = ( m - a - b * 10 - c * 100) / 1000 % 10 //千位数字 
+  var x = a - d - c - b
+
+  if ( x > 0 ){
+    time++
+  }  
+}
+console.log ( time ) 
+</script>
+
+<script type="f" id="ch0105/27">
+  var k = Number(prompt())
+  var Sn = 0
+  
+  for (var i = 1;  ; i++) {
+    Sn += 1 / i
+      if (Sn > k) {
+      console.log ( i )
+      break
+      }
+  }
+
+</script>
+
+<script type="f" id="ch0105/28">
+  //列出一个整数的每位数
+
+  var n = Number(prompt())
+
+  while (n > 0) {
+    var digit = n % 10
+    n = (n - digit) / 10
+    console.log (digit)
+  }
+  
+</script>
+
+
+<script type="" id="ch0105/29">
+//数字反转
+  var N = Number(prompt())
+
+  
+  
+</script>
+
+
+<script type="" id="ch0105/30">
+  var m = Number(prompt())
+  var k = Number(prompt())
+  var c = 0
+
+   while (m > 0) {
+    var digit = m % 10
+    m = (m - digit) / 10
+    if (digit == 3) {
+      c++
+    }
+  }
+  if (c == k && m / 19 == 0){
+      console.log('YES')
+    } else {
+      console.log('NO')
+    }
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
 
 
 
