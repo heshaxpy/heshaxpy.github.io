@@ -1,0 +1,134 @@
+用#画三角形
+<script type='j'>
+  var x = ''
+  for (i = 0; i < 7; i++){
+    x += '#' 
+    console.log(x)
+  }
+</script>
+
+1-100打印出FizzBuzz
+<script type='j'>
+
+  for (i = 1; i <= 100; i++) {
+
+    if(i % 3 == 0 && i % 5 == 0) {
+       console.log('FizzBuzz')
+    }else if (i % 3 == 0) {
+      console.log('Fizz')
+    }else if (i % 5 == 0) {
+      console.log('Buzz')
+    }else {
+      console.log(i)
+    }
+  }
+
+</script>
+
+<script>
+  //用#做棋盘布局
+  var chessboard = function (size) {
+
+    var x = ''
+    var y = ''
+
+    for (i = 0; i <= size; i++) {
+      if (i % 2) {
+        x += ' '
+        y += '#'
+      } else {
+        x += '#'
+        y += ' '
+      }
+    }
+    var result = ''
+    for (var i = 0; i < size; i++) {
+      if (i % 2) {
+        result += x
+      } else {
+        result += y
+      }
+      result += '\n'
+    }
+    return result
+  }
+</script>
+
+
+函数
+<script>
+  var square = function (x) {
+    return x * x
+  }
+
+  //调用平方函数计算4的平方
+  console.log(square(4))
+</script>
+
+函数可以包含多个参数，也可以不含参数
+
+<script>
+  var makeNoise = function () {
+    console.log('pling!')
+  }
+
+  makeNoise()
+      //调用makeNoise函数
+</script>
+
+
+
+<script>
+  //嵌套作用域
+  var landscape = function () {
+    var result = ''
+    var flat = function (size) {
+      for (var count = 0; count < size; count++)
+        result += '_'
+    }
+
+    var mountain = function (size) {
+      result += '/'
+      for (var count = 0; count < size; count++)
+        result += "'"
+      result += "\\"
+    }
+
+    flat(3)
+    mountain(4)
+    flat(6)
+    mountain(1)
+    flat(1)
+    return result
+  }
+  console.log(landscape())
+</script>
+
+
+<script>
+  //调用栈
+  function greet(who) {
+    console.log('hello' + who)
+  }
+  greet('harry')
+  console.log('bye')
+</script>
+
+
+<script>
+
+  //可选参数
+  function power(base, exponent) {
+    if (exponent == undefined) {
+      exponent = 2
+      var result = 1
+    }
+    for (var count = 0; count < exponent; count++) {
+      result *= base
+      return result
+    }
+  }
+  console.log(power(4))
+  console.log(power(4, 3))
+
+</script>

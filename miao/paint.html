@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>画图</title>
@@ -11,6 +12,7 @@
     }
   </style>
 </head>
+
 <body>
   <canvas width="400" height="300"></canvas>
 </body>
@@ -53,80 +55,80 @@
 </script>
 <script>
   // YOUR CODE GOES BELOW
-//画一条实线
-var x = 0
-var d = dot(x , 10 , 'red')
-for (var c = 0; c < 400; c ++) {
-  x = x + 1
-  d = dot(x , 10 , 'red')
-}
-console.log(d)
-  
-//画一条一个实点一个空点的虚线
+  //画一条实线
   var x = 0
-  var d= dot(x , 20 , 'lime')
-  for (var c = 0; c < 400 ; c++) {
-  x = x + 2
-  d1 = dot(x , 20 , 'lime')
-}
-console.log(d)
+  var d = dot(x, 10, 'red')
+  for (var c = 0; c < 400; c++) {
+    x = x + 1
+    d = dot(x, 10, 'red')
+  }
+  console.log(d)
 
-//画一条两个实点两个空点的虚线
-var x = 0
-var x1 = 1
-var d= dot(x , 30 , 'blue')
-var d1= dot(x1 , 30 , 'blue')
+  //画一条一个实点一个空点的虚线
+  var x = 0
+  var d = dot(x, 20, 'lime')
+  for (var c = 0; c < 400; c++) {
+    x = x + 2
+    d1 = dot(x, 20, 'lime')
+  }
+  console.log(d)
 
-for (var c = 0; c < 400 ; c++) {
-  x = x + 4
-  x1 = x1 + 4
-  d = dot(x , 30 , 'blue')
-  d1= dot(x1 , 30 , 'blue')
-}
-console.log(d,d1)
+  //画一条两个实点两个空点的虚线
+  var x = 0
+  var x1 = 1
+  var d = dot(x, 30, 'blue')
+  var d1 = dot(x1, 30, 'blue')
 
-//画一条三个实点两个空点的虚线
-var x = 0
-var x1 = 1
-var x2 = 2
-var d= dot(x , 40 , 'pink')
-var d1= dot(x1 , 40 , 'pink')
-var d2= dot(x1 , 40 , 'pink')
+  for (var c = 0; c < 400; c++) {
+    x = x + 4
+    x1 = x1 + 4
+    d = dot(x, 30, 'blue')
+    d1 = dot(x1, 30, 'blue')
+  }
+  console.log(d, d1)
 
-for (var c = 0; c < 400 ; c++) {
-  x = x + 4
-  x1 = x1 + 4
-  x2 = x2 + 4
-  d = dot(x , 40 , 'pink')
-  d1= dot(x1 , 40 , 'pink')
-  d2= dot(x2 , 40 , 'pink')
-}
-console.log(d,d1,d2)
+  //画一条三个实点两个空点的虚线
+  var x = 0
+  var x1 = 1
+  var x2 = 2
+  var d = dot(x, 40, 'pink')
+  var d1 = dot(x1, 40, 'pink')
+  var d2 = dot(x1, 40, 'pink')
+
+  for (var c = 0; c < 400; c++) {
+    x = x + 4
+    x1 = x1 + 4
+    x2 = x2 + 4
+    d = dot(x, 40, 'pink')
+    d1 = dot(x1, 40, 'pink')
+    d2 = dot(x2, 40, 'pink')
+  }
+  console.log(d, d1, d2)
 
 
-//画一条45度的斜线
+  //画一条45度的斜线
   var x = 0
   var y = 40
-  var d= dot(x , y , 'grey')
-  for (var c = 0; c < 40 ; c++) {
-  x = x + 0.5
-  y = y + 0.5
-  d = dot(x , y , 'grey')
-}
-console.log(d)
+  var d = dot(x, y, 'grey')
+  for (var c = 0; c < 40; c++) {
+    x = x + 0.5
+    y = y + 0.5
+    d = dot(x, y, 'grey')
+  }
+  console.log(d)
 
-//画一条30度的斜线（选做）
+  //画一条30度的斜线（选做）
   var x = 25
   var y = Math.sqrt(3) * x
-  var d= dot(x , y , 'red')
-  for (var c = 0; c < 20 ; c++) {
-  x = x + 1
-  y = Math.sqrt(3) * x
-  d = dot(x , y , 'red')
-}
- console.log(d)
+  var d = dot(x, y, 'red')
+  for (var c = 0; c < 20; c++) {
+    x = x + 1
+    y = Math.sqrt(3) * x
+    d = dot(x, y, 'red')
+  }
+  console.log(d)
 
-//在四个角画分别画一条45度的斜线以让画面看起来像一个相框
+  //在四个角画分别画一条45度的斜线以让画面看起来像一个相框
   var x = 0
   var y = 20
   var x1 = 400
@@ -135,11 +137,11 @@ console.log(d)
   var y2 = 280
   var x3 = 400
   var y3 = 280
-  var d= dot(x , y , 'orange')
-  var d1= dot(x1 , y1 , 'orange')
-  var d2= dot(x2 , y2 , 'orange')
-  var d3= dot(x3 , y3 , 'orange')
-  for (var c = 0; c < 40 ; c++) {
+  var d = dot(x, y, 'orange')
+  var d1 = dot(x1, y1, 'orange')
+  var d2 = dot(x2, y2, 'orange')
+  var d3 = dot(x3, y3, 'orange')
+  for (var c = 0; c < 40; c++) {
     debugger
     x = x + 1
     y = y - 1
@@ -149,24 +151,54 @@ console.log(d)
     y2 = y2 + 1
     x3 = x3 - 1
     y3 = y3 + 1
-  
-    dot(x , y , 'orange')
-  d1= dot(x1 , y1 , 'orange')
-  d2= dot(x2 , y2 , 'orange')
-  d3= dot(x3 , y3 , 'orange')
-}
-console.log(d,d1,d2,d3)
+
+    dot(x, y, 'orange')
+    d1 = dot(x1, y1, 'orange')
+    d2 = dot(x2, y2, 'orange')
+    d3 = dot(x3, y3, 'orange')
+  }
+  console.log(d, d1, d2, d3)
 
 
-//画一条跨越画布左上角和右下角的对角线
-//画一个空心矩形
-//画一个实心矩形
-//画一个rgb色彩空间的某一面
-//画一个空心的圆
+  //画一条跨越画布左上角和右下角的对角线
+  //画一个空心矩形
+  //画一个实心矩形
+  for (var x = 0; x < 100; x++) {
+    for (var y = 0; y < 100; y++) {
+      dot(x + 100, y + 100, 'black')
+    }
+  }
+
+  //画一个rgb色彩空间的某一面
+  //画一个空心的圆
+  var x = 80
 
 
 
-//画一个实心的圆
-//画一个大小合适的sin(x)的图像
+  //画一个实心的圆
+
+
+  //画一个大小合适的sin(x)的图像
+
+
+  var total = 0
+  var count = 1
+  while (count <= 10) {
+    total += count
+    count += 1
+  }
+  console.log(total)
+
+
+
+  var n = Number(prompt())
+  while (n > 0) {
+    var x = n % 10
+    n = (n - x) / 10
+  }
+  console.log(n)
+
+
 </script>
+
 </html>
