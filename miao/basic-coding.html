@@ -27,15 +27,16 @@
   var b = Number(prompt("请输入b"))
   var c = a % b
   var d = (a -  a % b ) / b 
-  console.log("余数为" + c)
-  console.log("整数商为" + d)
+  console.log(d)
+  console.log(c)
+  
 </script>
 
 <script type="f" id="ch0103/05">
   var a = Number(prompt("请输入a"))
   var b = Number(prompt("请输入b(不能为0)"))
   var c = a / b 
-  console.log("浮点数值为" + c.toFixed(9) )
+  console.log(c.toFixed(9))
 </script>
 
 
@@ -48,11 +49,11 @@
 
 
 <script type="g" id="ch0103/07">
+  var x = Number(prompt("请输入x"))
   var a = Number(prompt("请输入a"))
   var b = Number(prompt("请输入b"))
   var c = Number(prompt("请输入c"))
   var d = Number(prompt("请输入d"))
-  var x = Number(prompt("请输入x"))
   var f = a * x * x * x + b * x * x + c * x + d 
   console.log(f.toFixed(7))
 </script>
@@ -61,15 +62,15 @@
 <script type="D" id="ch0103/08">
   var F = Number(prompt("请输入华氏温度(f >= -459.67)"))
   var C = 5 * (F -32) / 9
-  console.log(C.toFixed(5) + '°C')
+  console.log(C.toFixed(5))
 </script>
 
 
 <script type="D" id="ch0103/09">
   var R = Number(prompt("请输入圆的半径（0 < R <= 10,000）"))
   var D = 2 * R
-  var C = 2 * Math.PI * R
-  var S = Math.PI * R * R
+  var C = 2 * 3.14159 * R
+  var S = 3.14159 * R * R
     console.log(D.toFixed(4))
     console.log(C.toFixed(4))
     console.log(S.toFixed(4))
@@ -86,15 +87,15 @@
 <script type="s" id="ch0103/11">
   var a = Number(prompt("请输入双精度浮点数a (a>0)"))
   var b = Number(prompt("请输入双精度浮点数b (b>0)"))
-  var r = a - 6 * b
-  console.log('余数r=' + r.toFixed(4))
+  var r = a % b
+  console.log(r.toFixed(4))
 </script>
 
 <script type="d" id="ch0103/12">
   var r = Number(prompt("请输入球的半径 (0<r<100)"))
   var pi = 3.14
   var V = ( 4 / 3 ) * pi * r * r * r 
-  console.log('球的体积V=' + V.toFixed(2))
+  console.log(V.toFixed(2))
 </script>
 
 
@@ -112,15 +113,15 @@
   var h = Number(prompt("请输入桶的深度(单位：cm)"))
   var r = Number(prompt("请输入桶的底面半径(单位：cm)"))
   var x = 20000/ (Math.PI * r * r * h)
-  console.log('大象至少需要喝'+ Math.ceil(x) +'桶水')  
+  console.log(Math.ceil(x))  
 </script>
 
 <script type="g" id="ch0103/15">
   var n = Number(prompt("一共买了几箱苹果（请输入整数）"))
   var x = Number(prompt("虫子每几个小时吃掉一个苹果（请输入整数，保证y <= n * x）"))
   var y = Number(prompt("经过了几个小时（请输入整数）"))
-  var a = n - y * x
-  console.log('经过'+ y +'小时后还剩'+ Math.floor(a) +'个苹果')
+  var a = n - y / x
+  console.log(Math.floor(a))
 </script>
 
 <script type="d" id="ch0103/16">
@@ -129,7 +130,7 @@
   var Xb = Number(prompt("请输入B的X坐标（输入值的绝对值不超过10000）"))
   var Yb = Number(prompt("请输入B的X坐标（输入值的绝对值不超过10000）"))
   var L = Math.sqrt((Ya - Yb) * (Ya - Yb) + (Xa - Xb) * (Xa - Xb))
-  console.log('两点之间的线段长度为'+ L.toFixed(3) )
+  console.log(L.toFixed(3))
 </script>
 
 <script type="d" id="ch0103/17">
@@ -141,7 +142,7 @@
   var y3 = Number(prompt("请输入第三个点的y坐标"))
   var P = (Math.sqrt((y3-y2)*(y3-y2)+(x3-x2)*(x3-x2)) + Math.sqrt((y3-y1)*(y3-y1)+(x3-x1)*(x3-x1)) +Math.sqrt((y2-y1)*(y2-y1)+(x2-x1)*(x2-x1))) / 2
   var S = Math.sqrt(P*(P-Math.sqrt((y3-y2)*(y3-y2)+(x3-x2)*(x3-x2)))*(P-Math.sqrt((y3-y1)*(y3-y1)+(x3-x1)*(x3-x1)))*(P-Math.sqrt((y2-y1)*(y2-y1)+(x2-x1)*(x2-x1))))
-  console.log('三角形面积为'+ S.toFixed(2) )
+  console.log(S.toFixed(2))
 </script>
 
 <script type="g" id="ch0103/18">
@@ -149,7 +150,7 @@
   var a2 = Number(prompt("请输入a2（a​2 <= 100）"))
   var n = Number(prompt("要求的项数是？（0 < n <= 1000）"))
   var an = a1 + ( n - 1 ) * ( a2 - a1 )
-  console.log('第'+ n + '项为' + an )
+  console.log(an)
 </script>
 
 
@@ -157,13 +158,13 @@
   var A = Number(prompt("请输入正整数A（1 <= A）"))
   var B = Number(prompt("请输入正整数B（B <=50000）"))
   var X = A * B
-  console.log('最终值为'+ X )
+  console.log( X )
 </script>
 
 
 <script type="f" id="ch0103/20">
   var n = Number(prompt("请输入指定的指数n（0 <= n < 31）"))
-  console.log('2的'+ n + '次方为' + Math.pow(2,a) )
+  console.log( Math.pow(2,n) )
 </script>
 
 
@@ -192,10 +193,10 @@
 <script type="f" id="ch0104/03">
   var n = Number(prompt("请输入整数n (n > 0)"))
   if (n % 2 == 0){
-    console.log ( n +"为even" )
+    console.log ( "even" )
   }
   else {
-    console.log ( n +"为odd" )
+    console.log ( "odd" )
   }
 </script>
 
@@ -384,7 +385,7 @@
 <script type="c" id="ch0104/18">
   var x = Number(prompt("输入点的x坐标")) 
   var y = Number(prompt("输入点的y坐标")) 
-  if (x > -1 && x < 1 && y > -1 && y < 1){
+  if (x >= -1 && x <= 1 && y >= -1 && y <= 1){
     console.log('yes')
   } else{
     console.log('no')
@@ -413,7 +414,7 @@
   } 
 </script>
 
-<script type="d" id="ch0104/20">
+<script type="" id="ch0104/20">
   var a = Number(prompt("输入浮点数a")) 
   var b = Number(prompt("输入浮点数b")) 
   var c = Number(prompt("输入浮点数c"))
@@ -451,8 +452,8 @@
   var n = Number(prompt("一共买了几箱苹果（请输入整数）"))
   var x = Number(prompt("虫子每几个小时吃掉一个苹果（请输入整数，保证y <= n * x）"))
   var y = Number(prompt("经过了几个小时（请输入整数）"))
-  var a = n - x * y
-  console.log('经过'+ y +'小时后还剩'+ a +'个苹果')
+  var a = n - y / x
+  console.log(Math.floor(a))
 </script>
 
 <script type="d" id="ch0105/01">
@@ -504,26 +505,23 @@
     var sample = Number(prompt("第" + (c + 1) + "个整数为"))
     sum = sum + sample
     c = c + 1
-    
   }
   var avg = sum / n
-  console.log( sum.toFixed(5) )
+  console.log( sum )
   console.log( avg.toFixed(5) )
 </script>
 
 <script type="e" id="ch0105/05">
   var n = Number(prompt("考试人数为"))
-  var c = 0
-  var max = score
+  var max = 0
 
-  while (c < n) {
-    var score = Number(prompt("第" + c + "个人的分数为"))
-    if (score > max){
+  for (var i = 0; i < n; i++) {
+    var score = Number(prompt("分数"))
+    if (score > max) {
       max = score
     }
-     c = c + 1
   }
-  console.log(max)
+  console.log (max)
 </script>
 
 
@@ -682,20 +680,24 @@
     console.log( Math.floor(M) )
 </script>
 
-<script type="" id="ch0105/16">
-  var N = Number(prompt('请输入年薪'))
-  var K = Number(prompt('输入增长率'))
-  var P = 200 * (1 + K / 100) * M
-  var D = M * N
+<script type="r" id="ch0105/16">
+
+  var N = Number(prompt('请输入年薪'))  //年薪为N
+  var K = Number(prompt('输入增长率'))  //增长率K
   
-  for (var i = 0; i <=20 ; i++) {
-    if (D >= P){
-      console.log (M)
-    } else {
-      console.log ('Impossible')
+  var price = 200 //第一年的房价
+  var money = 50 //第一年的存款 
+
+  for (var i = 2;  ; i++) {  //从第二年开始计算
+    money += N     //从第二年开始存款累加
+    price *= (1 + K / 100)  //从第二年开始计算房价
+
+    if (money > price) {  //比较存款大于房价时，输出年
+      console.log (i)
+      break
     }
   }
- 
+  
 </script>
 
 
@@ -757,15 +759,16 @@ for (i = 0; i < n ; i++){
 </script>
 
 
-<script type="g" id="ch0105/20">
+<script type="f" id="ch0105/20">
   var h = Number(prompt('请输入初始高度h'))
   var sum  = h
 
-for (i = 1; i < 10 ; i++){
-  h = h / 2
-  sum += h * 2
-}
- console.log(sum , h)
+  for (i = 1; i <= 10 ; i++){
+    sum += h
+    h = h / 2
+  }
+
+  console.log(sum , h)
 
 </script>
 
@@ -847,7 +850,7 @@ console.log(c)
 </script>
 
 
-<script type="g" id="ch0105/25">
+<script type="" id="ch0105/25">
 
   for (var i = 1; i<= 999; i++) {
     var a7 = i % 7  //7进制的个位数
@@ -923,7 +926,7 @@ console.log ( time )
 </script>
 
 
-<script type="" id="ch0105/30">
+<script type="d" id="ch0105/30">
   var m = Number(prompt())
   var k = Number(prompt())
   var c = 0
@@ -941,9 +944,27 @@ console.log ( time )
       console.log('NO')
     }
 
-
 </script>
 
+<script type="" id="ch0105/31">
+  var m = Number(prompt())
+  var k = Number(prompt())
+  var c = 0
+
+   while (m > 0) {
+    var digit = m % 10
+    m = (m - digit) / 10
+    if (digit == 3) {
+      c++
+    }
+  }
+  if (c == k && m / 19 == 0){
+      console.log('YES')
+    } else {
+      console.log('NO')
+    }
+
+</script>
 
 
 
