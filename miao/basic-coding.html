@@ -496,19 +496,20 @@
   console.log((sum / n).toFixed(4))
 </script>
 
-<script type="d" id="ch0105/04">
+<script type="" id="ch0105/04">
   var n = Number(prompt("有几个整数"))
   var c = 0
   var sum = 0
 
   while (c < n) {
-    var sample = Number(prompt("第" + (c + 1) + "个整数为"))
+    var sample = Number(prompt())
     sum = sum + sample
     c = c + 1
   }
   var avg = sum / n
   console.log( sum )
   console.log( avg.toFixed(5) )
+
 </script>
 
 <script type="e" id="ch0105/05">
@@ -763,12 +764,12 @@ for (i = 0; i < n ; i++){
   var h = Number(prompt('请输入初始高度h'))
   var sum  = h
 
-  for (i = 1; i <= 10 ; i++){
+  for (i = 1; i < 10 ; i++){
     sum += h
     h = h / 2
   }
 
-  console.log(sum , h)
+  console.log(sum.toFixed(4), ( h / 2 ).toFixed(7))
 
 </script>
 
@@ -791,22 +792,28 @@ for (i = 0; i < n ; i++){
 </script>
 
 
-<script type="F" id="ch0105/22">
-  var N = Number(prompt('请输入正整数N'))
-  var C = N 
- for (i = 0; i <= C ; i++){
-  if (N == 1) {
-  console.log ('End')
-  } else if (N % 2 == 0) {
-    var n = N / 2 
-    console.log(N + '/2=' + n )
-    N = n 
-  } else if (N % 2 == 1){
-    var n  = N * 3 + 1
-    console.log(N + '*3+1=' + n )
-    N = n
-  } 
+<script type="" id="ch0105/22">
+  //津津的储蓄计划
+  var change = 300 //津津手里的钱
+
+  for (i = 1; i <= 12; i++) {
+   var budget = Number(prompt())  //输入每月的预算
+   var extra = change - budget  //减去预算外额外的钱
+   var money = ( change - budget ) % 100  //剩下来的零头
+   var save =  extra - money  //津津存入妈妈那的钱
+   change = budget + money //最终到津津手里的钱
+
+   if (change < budget) {
+     console.log ( -i )
+     break
+   } else {
+    save = 1.2 * save 
+    console.log (save)
+   }
 }
+  
+  
+  
 </script>
 
 
@@ -981,15 +988,9 @@ console.log ( time )
 
 sqrt: 求一个正数的平方根
 <script>
-  var sqrt = function (x) {
-    return (x * x - n)
-  }
 
-  sqrt: 求一个正数的平方
-  var power = function (n) {
-    return n * n
-  }
-
+  var x = n
+  while ()
 
 
 
@@ -1012,4 +1013,19 @@ prime: 判断素数
 primes: 输出1000以内的素数
 itob: 不使用隐式类型转换将一个数字转换为字符串
 lcf: 写函数求出两个数的最大公约数
+<script>
+    function lcf(m, n) {
+      while (m != n) {
+        if (m < n) {
+          var t = m
+          m = n
+          n = t
+        }
+        m = m - n
+      }
+      return m
+    }
+
+
+</script>
 lcm: 写函数求出两个数的最小公倍数

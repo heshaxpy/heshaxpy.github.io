@@ -1,3 +1,4 @@
+习题
 用#画三角形
 <script type='j'>
   var x = ''
@@ -33,12 +34,12 @@
     var y = ''
 
     for (i = 0; i <= size; i++) {
-      if (i % 2) {
-        x += ' '
-        y += '#'
-      } else {
-        x += '#'
-        y += ' '
+      if (i % 2) { //i % 2 == 1  为真 即选中奇数行
+        x += ' '   //奇数行第一位为空格
+        y += '#'   //奇数行第二位为#
+      } else {    //为假时 即选中偶数行
+        x += '#'  //偶数行第一位为#
+        y += ' '  //偶数行第二位为空格
       }
     }
     var result = ''
@@ -55,7 +56,72 @@
 </script>
 
 
+
+
+
+
 函数
+
+<script>
+  var power = function (x, n) { //形参
+    var result = 1
+    for (var i = 0; i < n; i++) {
+      result *= x
+    }
+    return result
+  }
+
+  var a = power(2, 5) //实参
+</script>
+
+<script>
+  //接受一个n,判断他是否是奇数
+  var isOdd = function (n) {
+    if (n % 2 == 1) {
+      return true
+    }
+    return false
+  }
+</script>
+<script>
+  //判断一个数是否为素数，是返回true，否返回false。除了1和它本身，没有别的因子。
+  var isPrime = function (n) {  //一个数的因子必定有一个大于n的根号，一个小于n的根号
+    var sqrt_n = Math.sqrt(n)
+    for (var i = 2; i <= sqrt_n; i++) { //因此只需判定2到根号n之间有没有它的因子
+      if (n % i == 0) {
+        return false  //非素数返回false
+      }
+    }
+    return true
+  } 
+</script>
+//全局变量、局部变量
+
+
+<script>
+  for (var i = 0; i < 10000; i++) {
+    if (isPrime(i)) {  //一个函数调用就是一个表达式 isPrime(i) == true
+      console.log(i)
+    }
+  }
+</script>
+
+<script>
+  //返回数值的十进制位宽
+  //例如  1234  ->>  6
+  // 457 ->> 3
+
+  var digitWidth = function (n) {
+    var c = 0
+    do {
+      var digit = n % 10
+      c++
+      n = (n - digit) / 10
+    } while (n > 0)
+    return c
+  }
+</script>
+
 <script>
   var square = function (x) {
     return x * x
@@ -65,15 +131,16 @@
   console.log(square(4))
 </script>
 
-函数可以包含多个参数，也可以不含参数
 
+
+
+函数可以包含多个参数，也可以不含参数
 <script>
   var makeNoise = function () {
     console.log('pling!')
   }
 
-  makeNoise()
-      //调用makeNoise函数
+  makeNoise()   //调用makeNoise函数
 </script>
 
 
@@ -101,7 +168,39 @@
     flat(1)
     return result
   }
-  console.log(landscape())
+
+  console.log(landscape())  //括号以外的代码无法使用里面的变量
+</script>
+
+<script>
+  var bar = function (x) {
+    console.log(x)
+  }
+
+  var foo = function () {
+    var a = 1
+    var b = 2
+
+    bar(a) //传参，上面的bar函数就能用a的值
+  }
+</script>
+
+function square () 在前表示函数声明语句
+var square = function () 变量声明，函数名不能省略
+
+
+<script>
+  //变量声明提前
+  var a
+  console.log(foo())
+  console.log(a)  //上面定义了但是没有赋值，输出undefined
+  a = 8
+
+  //let 如果在声明之前使用该变量会报错，表示在变量声明前不能使用
+  console.log(a)
+  let a = 8
+  console.log(a)
+
 </script>
 
 
@@ -113,10 +212,79 @@
   greet('harry')
   console.log('bye')
 </script>
+调用栈的两个语义：
+计算机内部用于存储函数返回位置，函数的局部变量的内存空间
+函数间的相互调用逻辑关系，交调用栈
 
+
+
+求一个正数的平方根
+<script>
+  //二分法
+  function sqrt(n) {
+    var left = 0
+    var right = n
+
+    while (right - left > 1) {
+      var mid = Math.floor((left + right) / 2)
+      var t = mid * mid
+      if (t == n) {
+        return mid
+      } else if (t > n) {
+        right = mid
+      } else if (t < n) {
+        left = mid
+      }
+    }
+    return (left + right) / 2
+  }
+
+  //牛顿法
+  function sqrt(n) {
+    var x = n
+    while (Math.abs(x * x - n) > 0.00000001) {
+      x = (x + n / x) / 2
+    }
+    return x
+  }
+</script>
 
 <script>
+  //判断一个数是否为水仙花数
+  function isNarcissistic(n) {
+    var Width = 0 //n的十进制位宽
+    var m = n
+    do {
+      var digit = m % 10
+      m = (m - digit) / 10
+      width++
+    } while (m > 0)
 
+    m = n
+    var sum = 0
+
+    do {
+      var digit = m % 10
+      var exp = 1
+      for (var i = 0; i < width; i++) {
+        exp *= digit
+      }
+      sum += exp
+      m = (m - digit) / 10
+    } while (m > 0)
+
+    if (sum == 0) {
+      console.log(n)
+    } else {
+      //return false
+    }
+  }
+
+
+  //digitWidth
+</script>
+
+<script>
   //可选参数
   function power(base, exponent) {
     if (exponent == undefined) {
@@ -131,4 +299,306 @@
   console.log(power(4))
   console.log(power(4, 3))
 
+  function power(base, exponent) {
+    if (exponent == undefined) {
+      exponent = 2
+      var result = 1
+    }
+  }
+
 </script>
+
+
+<script>
+  //递归
+  //递归函数的优点是定义简单，逻辑清晰。理论上，所有的递归函数都可以写成循环的方式，但循环的逻辑不如递归清晰。
+
+
+  function fact(n) {
+    if (n == 1) {
+      return 1
+    } else {
+      return n * fact(n - 1)
+    }
+  }
+
+  fact(3)
+  fact(5)
+
+  //fact(5)
+  //    5 * fact (4)
+  //      4 * fact (3)
+  //        3 * fact (2)
+  //          2 * fact (1) 
+  // 向上return
+  //          2 * 1
+  //        3 * 2 * 1
+  //      4 * 3 * 2 * 1
+  //    5 * 4 * 3 * 2 * 1
+
+</script>
+
+//leetcode 509 Fibonacci numbers
+<script>
+  //循环的做法
+  var fib = function (N) {
+
+    if (N == 2) { //单列出N为2时
+      return 1
+    }
+    if (N <= 1) { //单列出N<=1时
+      return N
+    }
+
+    var f1 = 1
+    var f2 = 1
+    var fn = 0
+
+    for (var i = 3; i <= N; i++) {
+      fn = f1 + f2
+      f2 = f1   //提前f2
+      f1 = fn   //提前f1
+    }
+    return fn
+  };
+
+
+  //递归的做法
+  var fib = function (N) {
+
+    if (N <= 1) {
+      return N
+    }
+    else {
+      return fib(N - 1) + fib(N - 2)  //直接调用fib函数
+    }
+  };
+</script>
+
+<script>
+  var n = Number(prompt())
+  var result = []
+
+  for (var i = 0; i < n; i++) {
+    var num = Number(prompt())
+    result.push(num)
+  }
+  console.log(result)
+
+</script>
+
+
+<script>
+  //数组  把数组里所有的0移到后面
+  var arr1 = []
+  var arr2 = []
+
+  for (var i = 0; i <= nums.length - 1; i++) {
+    if (nums[i] == 0) {
+      arr2.push(0)
+    } else {
+      arr1.push(nums[i])
+    }
+    return (arr1.concat(arr2))
+  }
+  moveZeroes([0, 1, 0, 3, 12])
+
+</script>
+
+<script>
+  //如何验证一个数Valid Perfect Square
+  //二分法
+  var isPerfectSquare = function (num) {
+    var left = 0
+    var right = num
+
+    if (num == 1) {
+      return true
+    }
+    while ((right - left) > 1) {
+      var mid = Math.floor((right + left) / 2)
+      var t = mid * mid
+      if (t == num) {
+        return true
+      } else if (t < num) {
+        left = mid
+      } else {
+        right = mid
+      }
+    }
+    return false
+  };
+</script>
+
+<script>
+  //判断 an ugly number.
+  //Ugly numbers are positive numbers whose prime factors only include 2, 3, 5.
+
+  var isUgly = function (num) {
+
+    if (num == 0) {
+      return false
+    }
+
+    while (num % 2 == 0) { //先除2看能否除尽
+      num = num / 2
+    }
+    while (num % 3 == 0) { //除3看能否除尽
+      num = num / 3
+    }
+    while (num % 5 == 0) { //除5看能否除尽
+      num = num / 5
+    }
+
+    if (num == 1) {  //如果最后的值等于1则为真
+      return true
+    } else {
+      return false
+    }
+  }
+</script>
+
+<script>
+  //判断一个数是不是2的指数次幂 Power of Two
+  var isPowerOfTwo = function (n) {
+    if (n == 0) {
+      return false
+    }
+    while (n % 2 == 0) {
+      n = n / 2
+    }
+    if (n == 1) {
+      return true
+    } else {
+      return false
+    }
+  }
+</script>
+
+
+
+<script>
+  //two sum  求一个数组里某两个数之和等于target
+
+  var twoSum = function (nums, target) {
+    for (var i = 0; i < nums.length - 1; i++) {  //先取i的值
+      for (var j = i + 1; j < nums.length; j++) { //在i位置的值时，尝试每个j位置值
+        if (nums[i] + nums[j] == target) {  //判断和是否等于target
+          return [i, j]
+        }
+      }
+    }
+  }
+</script>
+
+<script>
+  //Fizz Buzz 以字符串的方式输出1-n的表示方法
+
+  var fizzBuzz = function (n) {
+    var result = []
+
+    for (var i = 1; i <= n; i++) {
+      if (i % 15 == 0) {
+        result.push('FizzBuzz')
+      } else if (i % 5 == 0) {
+        result.push('Buzz')
+      } else if (i % 3 == 0) {
+        result.push('Fizz')
+      } else {
+        result.push('' + i)
+      }
+    }
+    return result
+
+  };
+</script>
+
+<script>
+  //Remove Duplicates from Sorted Array  移除数组中重复的项 
+
+  var removeDuplicates = function (nums) {
+    var length = nums.length
+    var a = nums[0]
+    var index = 1
+
+    if (length == 0) {
+      return 0
+    }
+    i
+    for (var i = 1; i < length; i++) {
+      if (nums[i] != a) {
+        a = nums[i]
+        nums[index] = nums[i]
+        index++
+      }
+    }
+    return index
+  }
+
+  //双指针法
+  //数组完成排序后，我们可以放置两个指针 i 和 j，其中 i 是慢指针，而 j 是快指针。只要 nums[i] = nums[j]，我们就增加 j 以跳过重复项。
+  //当我们遇到nums[j] != nums[i] 时，跳过重复项的运行已经结束，因此我们必须把它 nums[j] 的值复制到nums[i + 1]。然后递增 i，接着我们将再次重复相同的过程，直到 j 到达数组的末尾为止。
+
+  var removeDuplicates = function (nums) {
+
+    var length = nums.length //定义数组长度
+    var i = 0  //定义第一位
+
+    if (length == 0) {
+      return 0
+    }
+    for (var j = 1; j < length; j++) {  //设置快指针j
+      if (nums[i] != nums[j]) {
+        i++                            //当nums[j] != nums[i]时，增加i的下标
+        nums[i] = nums[j]             //此时的 i 已经 +1，即将nums[j] 的值赋给 nums[i + 1]
+      }
+    }
+    return i + 1
+  }
+
+</script>
+
+
+整数在计算机里的表示
+
+
+左移 << 对于正数来说，是加倍 对于负数来说，也是加倍 保留符号右移>> 左边补符号，左边是1补1，是0补0
+  相当于减半取整
+  无符号右移 >>> 左边补0
+  负数移完以后变成正数
+  移完以后的数字永远当正数理解
+  js中浮点数参与位运算时，取其整数部分的低32bit参与运算。
+
+  按位与 &
+  5 & 8 = 0
+  15 & 9
+  按位或 |
+  按位异或 |
+  相同为0
+  不同为1
+  按位非 ~ 一元运算符
+  ~n = -(n+1)
+
+  <script>
+
+    //Single Number    Given a non-empty array of integers nums, every element appears twice except for one. Find that single one.
+
+    var singleNumber = function (nums) {
+
+      var index = nums[0]  //定义第一位
+      for (var i = 1; i < nums.length; i++) {
+        index ^= nums[i]    //将每位数与之前的异或  赋值给index
+      }
+
+      return index //最终的异或结果是  单独的那个数
+    };
+  </script>
+
+  <script>
+    function f(row,col) {
+      if(row == a.length - 1) {
+        return a[row][col]
+      }
+      return a[row][col] + Math.max( (f(row + 1),col) , (f(row + 1) , f(col + 1)) )
+    }
+  </script>
