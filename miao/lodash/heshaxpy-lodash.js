@@ -21,5 +21,37 @@ var heshaxpy = {
             result.push(arr)  
         }
         return result
+    },
+
+
+    join: function(array, separator = ','){  
+       
+        var s = '' + array[0]         //字符串拼接数组第0项
+
+        for (var i = 1; i < array.length; i++) {    //从第1项开始遍历
+            s +=  separator + array[i]     //最新的结果 字符串加上等于操作符+数组元素
+        }
+        return s
+    },
+
+
+
+    last: function(array) {
+        return array[array.length - 1]
+    },
+
+
+
+    lastIndexOf: function(array, value, fromIndex=array.length-1) {
+
+        for (var i = fromIndex; i >= 0; i--) {    //直接从给定起始点开始返回索引
+            if (array[i] == value){
+                return i
+            }
+        }
+        return i
     }
+
+
+
 }
