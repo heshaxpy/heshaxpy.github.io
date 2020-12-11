@@ -134,8 +134,8 @@ var heshaxpy = {
     },
 
     indexOf: function (array, value, fromIndex = 0) {
-        if (fromIndex < 0) {        //起始值小于0时，去掉后面的偏移量
-            array.length = array.length + fromIndex
+        if (fromIndex < 0) {        //起始值小于0时,从0开始
+            fromIndex = 0
         }
         for (var i = fromIndex; i < array.length; i++) {
             if (array[i] == value) {
@@ -294,13 +294,89 @@ var heshaxpy = {
                         return false
                     }
                 }
-
             }
         }
-
         return true
-    }
+    },
 
+    size: function (col) {
+        if (typeof col == 'object' && !Array.isArray(col)) {
+            var arr = Object.keys(col)
+            return arr.length
+        }
+        return col.length
+    },
+
+    union: function (...arrays) {     //多个数组
+        var result = []
+
+        arrays.forEach(item => {     //遍历arrays的每一项
+
+            item.forEach(it => {         //遍历arrays拆开后item的每一项
+                if (!result.includes(it)) {  //如果result里不包含item里的元素
+                    result.push(it)   //不重复的项都放进result里
+                }
+            })
+        })
+        return result
+    },
+
+
+
+    uniq: function (array) {
+        var result = []
+
+        array.forEach(it => {
+            if (!result.includes(it)) {
+                result.push(it)
+            }
+        })
+        return result
+    },
+
+
+    without: function (array, ...value) {
+        var result = []
+        array.forEach(it => {
+            if (!value.includes(it)) {
+                result.push(it)
+            }
+        })
+        return result
+    },
+
+
+
+    tail: function (array) {
+        return array.slice(1)
+    },
+
+
+
+    take: function (array, n = 1) {
+        var result = []
+
+        for (var i = 0; i < array.length; i++) {
+            if (i < n) {
+                result.push(array[i])
+            }
+        }
+        return result
+    },
+
+    takeRight: function (array, n = 1) {
+        var result = []
+        index = array.length - n
+
+        if (array.length < n) {
+            return array
+        }
+
+        for (var i = index; i < array.length; i++) {
+            result.push(array[i])
+        }
+        return result
+    }
 
 
 
