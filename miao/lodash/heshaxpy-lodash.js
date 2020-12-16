@@ -67,7 +67,7 @@ var heshaxpy = {
         return result
     },
 
-    dropright: function (array, n = 1) {
+    dropRight: function (array, n = 1) {
         if (array.length < n) {    //数组长度小于n，直接返回空数组
             return []
         }
@@ -84,6 +84,73 @@ var heshaxpy = {
 
     findIndex: function (array, predicate = _.identity, fromIndex = 0) {
 
+    },
+
+
+
+
+    pull: function (array, ...values) {
+        values.forEach(it => {
+            if (array.includes(it)) {
+                array.splice(it, 1)
+            }
+        })
+        return array
+    },
+
+
+    xor: function (...arrays) {
+        var result = []
+        var map = {}
+
+        arrays.forEach(it => {
+            it.forEach(item => {
+                if (item in map) {   //出现多次的标记累加
+                    map[item] += 1
+                } else {      //出现一次的标记为1
+                    map[item] = 1
+                }
+            })
+        })
+
+        for (let key in map) {
+            if (map[key] == 1) {   //筛选出一次
+                result.push(+key)   //+key隐式类型转换，字符串转数字
+            }
+        }
+        return result
+    },
+
+
+
+    zip: function (...arrays) {
+        var result = []
+        var result1 = []
+        var result2 = []
+        var map = {}
+
+        arrays.forEach(it => {
+            it.forEach(item => {
+                if (item in map) {
+                } else {
+                    map[item] = +1
+                }
+            })
+        })
+
+        for (let key in map) {
+            if (map[key] % 2 == 1) {   //筛选出一次
+                result1.push(key)   //+key隐式类型转换，字符串转数字
+            }
+            if (map[key] % 2 == 0) {
+                result2.push(key)
+            }
+        }
+        result.push([result1, result2])
+        return result
+    },
+    flatten: function (...array) {
+        return [].concat(...array)
     },
 
     flatten: function (array) {
@@ -375,6 +442,42 @@ var heshaxpy = {
         for (var i = index; i < array.length; i++) {
             result.push(array[i])
         }
+        return result
+    },
+
+    compact: function (array) {
+        var result = []
+
+        array.forEach(it => {
+            if (it == '' || it == false || it == null || it == 0 || it == undefined || it != it) {
+
+            } else {
+                result.push(it)
+            }
+        })
+        return result
+    },
+
+    difference: function (array, ...values) {
+        var result = []
+        var flag = false
+
+        array.forEach(it => {
+            flag = false
+
+            values.forEach(item => {
+                for (var i = 0; i < item.length; i++) {
+                    if (it == item[i]) {
+                        flag = true
+                        break
+                    }
+                }
+            })
+
+            if (flag == false) {
+                result.push(it)
+            }
+        })
         return result
     }
 
