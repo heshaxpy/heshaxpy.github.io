@@ -1,4 +1,5 @@
 var heshaxpy = {
+
     chunk: function (array, size = 1) {
         var result = []   //创建一个外层数组
         var arr = []   //内层数组
@@ -82,20 +83,101 @@ var heshaxpy = {
         return array
     },
 
-    findIndex: function (array, predicate = _.identity, fromIndex = 0) {
-
+    findIndex: function (array, predicate, fromIndex = 0) {
+        for (var i = fromIndex; i < array.length; i++) {
+            if (typeof predicate == 'function') {
+                if (predicate(array[i])) {
+                    return i
+                }
+            } else if (typeof predicate == 'string') {
+                if (array[i][predicate] == true) {
+                    return i
+                }
+            } else if (Array.isArray(predicate)) {
+                var flag = true
+                for (var j = 0; j < predicate.length; j += 2) {
+                    if (array[i][predicate[j]] != predicate[j + 1]) {
+                        flag = false
+                        break
+                    }
+                }
+                if (flag == true) {
+                    return i
+                }
+            } else if (typeof predicate == 'object') {
+                var flag = true
+                for (key in predicate) {
+                    if (predicate[key] != array[i][key]) {
+                        flag = false
+                        break
+                    }
+                }
+                if (flag == true) {
+                    return i
+                }
+            }
+        }
+        return -1
     },
 
 
-
+    findLastIndex(array, predicate, fromIndex = array.length - 1) {
+        for (var i = fromIndex; i >= 0; i--) {
+            if (typeof predicate == "Function") {
+                if (predicate(array[i])) {
+                    return i
+                }
+            } else if (typeof predicate == 'String') {
+                if (array[i][predicate] == true) {
+                    return i
+                }
+            } else if (Array.isArray(predicate)) {
+                var flag = true
+                for (var j = 0; j < predicate.length; j += 2) {
+                    if (array[i][predicate[j]] != predicate[j + 1]) {
+                        flag = false
+                        break
+                    }
+                }
+                if (flag == false) {
+                    return i
+                }
+            } else if (typeof predicate == 'Object') {
+                var flag = true
+                for (key in predicate) {
+                    if (predicate[key] != array[i][key]) {
+                        flag = false
+                        break
+                    }
+                }
+                if (flag == false) {
+                    return i
+                }
+            }
+        }
+        return - 1
+    },
 
     pull: function (array, ...values) {
-        values.forEach(it => {
-            if (array.includes(it)) {
-                array.splice(it, 1)
+        let result = []
+
+        array.forEach(it => {
+            if (!values.includes(it)) {
+                result.push(it)
             }
         })
-        return array
+        return result
+    },
+
+    pullAll: function (array, values) {
+        let result = []
+
+        for (let val of array) {
+            if (!values.includes(val)) {
+                result.push(val)
+            }
+        }
+        return result
     },
 
 
@@ -169,7 +251,7 @@ var heshaxpy = {
 
         for (var i = 0; i < array.length; i++) {
             if (Array.isArray(array[i])) {        //判断是不是数组
-                this.flattenDeep(array[i])   //递归
+                result.push(...flattenDeep(array[i]))   //递归
             } else {
                 result.push(array[i])
             }
@@ -177,8 +259,42 @@ var heshaxpy = {
         return result
     },
 
-    flattenDepth: function (array, depth = 1) {
 
+    flattenDepth: function (array, depth = 1) {
+        let result = array
+
+        while (depth) {
+            result = flatten(result)
+            depth--
+        }
+        return result
+    },
+
+    intersection: function (array, ...arrays) {
+        let result = []
+
+        for (let key of arrays) {
+            for (let item of key) {
+                if (array.includes(item)) {
+                    result.push(item)
+                }
+            }
+            array = result
+            result = []
+        }
+        return array
+    },
+
+    intersectionBy: function (...arrays) {
+        let result = []
+        let map = new Map()
+        let array = new Array(...arrays)
+
+        if (typeof iteratee == 'Function') {
+            result.push(iteratee(intersection(arrays)))
+        } else if (typeof iteratee == 'String') {
+
+        }
     },
 
 
@@ -479,7 +595,24 @@ var heshaxpy = {
             }
         })
         return result
-    }
+    },
+
+    concat: function (array, ...values) {
+        var result = array.slice()     //返回新数组
+
+        values.forEach(item => {
+            if (Array.isArray(item)) {
+                result.push(...item)
+            } else {
+                result.push(item)
+            }
+        })
+        return result
+    },
+
+    identity: a => a,
+
+
 
 
 
