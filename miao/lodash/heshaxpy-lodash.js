@@ -180,6 +180,81 @@ var heshaxpy = {
         return result
     },
 
+    pullAt: function (array, indexes) {
+        let result = []
+        indexes.forEach(it => {
+            result.push(array[it])
+        })
+        return result
+    },
+
+    matches: function (source) {
+        return (value) => this.isEqual(value, source)
+    },
+
+
+    isArguments: function (value) {
+        return checkType(value, "Arguments")
+    },
+
+    isArray: function (value) {
+        return checkType(value, "Array")
+    },
+
+    isArrayBuffer: function (value) {
+        return checkType(value, "ArrayBuffer")
+    },
+
+    isBoolean: function (value) {
+        return checkType(value, "Boolean")
+    },
+
+    isBuffer: function (value) {
+        return checkType(value, "Buffer")
+    },
+
+    isDate: function (value) {
+        return checkType(value, "Date")
+    },
+    isFunction: function (value) {
+        return checkType(value, "Function")
+    },
+
+    isString: function (value) {
+        return checkType(value, "String")
+    },
+
+    checkType: function (value, type) {
+        return Object.prototype.toString.call(value) === `[object ${type}]`
+    },
+
+    isEqual: function (x, y) {
+        //判断string，number，boolean类型
+        if (x === y) {
+            return true
+        }
+
+        //判断 NaN
+        if (x !== x || y !== y) {
+            return true
+        }
+        if (x === null || y === null || typeof x !== "object" || typeof y !== "object") {
+            return false
+        }
+
+        //只枚举自身属性
+        if (Object.keys(x).length !== Object.keys(y).length) {
+            return false
+        }
+
+        for (let key in x) {
+            if (!(key in y) || !isEqual(x[key], y[key])) {
+                return false
+            }
+        }
+        return true
+    },
+
 
     xor: function (...arrays) {
         var result = []
@@ -231,8 +306,11 @@ var heshaxpy = {
         result.push([result1, result2])
         return result
     },
+
+    //const flatten = [].concat.apply.bind([].concat, [])
     flatten: function (...array) {
         return [].concat(...array)
+        //return [].concat.apply([], array)
     },
 
     flatten: function (array) {
@@ -409,7 +487,7 @@ var heshaxpy = {
         return min
     },
 
-    minBy: function (array, iteratee = _.identity) {
+    minBy: function (array, iteratee) {
 
     },
 
@@ -612,7 +690,200 @@ var heshaxpy = {
 
     identity: a => a,
 
+    mean: function (array) {
+        let sum = 0
+        for (var i = 0; i < array.length; i++) {
+            sum += array[i]
+        }
+        return sum / array.length
+    },
 
+    meanBy: function (array, iteratee) {
+
+    },
+
+    toArray: function (val) {
+        let result = []
+
+        if (val == null || val == 1) {
+            return []
+        } else if (typeof val == 'string') {
+            return val.split('', val.length)
+        } else if (typeof val == 'object') {
+            for (let key in val) {
+                result.push(val[key])
+            }
+        }
+        return result
+    },
+
+    toFinite: function (val) {
+        if (val !== val) {
+            return 0
+        }
+        if (val === Infinity) {
+            return Number.MAX_VALUE
+        } else if (val === -Infinity) {
+            return -Number.MAX_VALUE
+        } else {
+            return Number(val)
+        }
+
+    },
+
+    toInterger: function (val) {
+        let num = toFinite(val)
+        return Math.floor(num)
+    },
+
+    toLength: function (val) {
+        let a = Math.pow(2, 32) - 1
+        if (val > a) {
+            return a
+        } else {
+            return toInterger(val)
+        }
+    },
+
+    toNumber: function (val) {
+        return Number(val)
+    },
+
+    add: function (x, y) {
+        return x + y
+    },
+
+    ceil: function (num, pre = 0) {
+
+    },
+
+    divide: function (x, y) {
+        return x / y
+    },
+
+    floor: function (num, pre = 0) {
+
+    },
+
+
+    pad: function (string = '', length = 0, chars = ' ') {
+
+        let l = length - string.length
+        let n = chars.length
+
+        if (l <= 0) {
+            return string
+        } else if (l > 0) {
+            let a = Math.floor(l / 2)
+            let b = Math.ceil(l / 2)
+            let x = Math.floor(a / n)
+            let x1 = a % n
+            let y = Math.floor(b / n)
+            let y1 = b % n
+            return chars.repeat(x) + chars.slice(0, x1) + string + chars.repeat(y) + chars.slice(0, y1)
+        }
+    },
+
+
+    padEnd: function (string = '', length = 0, chars = ' ') {
+        let l = length - string.length
+        let n = chars.length
+
+        if (l <= 0) {
+            return string
+        } else if (l > 0) {
+
+            let x = Math.floor(l / n)
+            let x1 = l % n
+
+            return string + chars.repeat(x) + chars.slice(0, x1)
+        }
+    },
+
+
+    padStart: function (string = '', length = 0, chars = ' ') {
+        let l = length - string.length
+        let n = chars.length
+
+        if (l <= 0) {
+            return string
+        } else if (l > 0) {
+
+            let x = Math.floor(l / n)
+            let x1 = l % n
+
+            return chars.repeat(x) + chars.slice(0, x1) + string
+        }
+    },
+
+    parseInt: function (string, radix = 10) {
+        return parseInt(string, radix)
+    },
+
+    repeat: function (string = '', n = 1) {
+        return string.repeat(n)
+    },
+
+    replace: function (string = '', p, replacement) {
+        return string.replace(p, replacement)
+    },
+
+    snakeCase: function (string = '') {
+
+    },
+
+
+    split: function (string = '', s, limit) {
+        let result = []
+
+        for (var i = 0; i < string.length; i++) {
+            if (string[i] != s) {
+                result.push(string[i])
+            }
+        }
+        return result.slice(0, limit)
+    },
+
+
+    unescape: function (string = '') {
+
+        if (string.includes("&amp;")) {
+            string = string.replace("&amp;", "&")
+        }
+        if (string.includes("&lt;")) {
+            string = string.replace("&lt;", "<")
+        }
+        if (string.includes("&gt;")) {
+            string = string.replace("&gt;", ">")
+        }
+        if (string.includes("&quot;")) {
+            string = string.replace("&quot;", '"')
+        }
+        if (string.includes("&#39;")) {
+            string = string.replace("&#39;", "'")
+        }
+        return string
+    },
+
+
+    escape: function (string = '') {
+        if (string.includes("&")) {
+            string = string.replace("&", "&amp;")
+        }
+        if (string.includes("<")) {
+            string = string.replace("<", "&lt;")
+        }
+        if (string.includes(">")) {
+            string = string.replace(">", "&gt;")
+        }
+        if (string.includes('"')) {
+            string = string.replace('"', "&quot;")
+        }
+        if (string.includes("'")) {
+            string = string.replace("'", "&#39;")
+        }
+        return string
+    },
 
 
 
